@@ -32,6 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-!scrapy runspider ptautm_scrape.py -O hasil.json && sleep 2
+['# import StemmerFactory class', 'from Sastrawi.Stemmer.StemmerFactory import StemmerFactory', '', '# create stemmer', 'factory = StemmerFactory()']
+...
+['ind = 0', "for sentence in df['abstrak']:", "    df['abstrak'][ind] = stemmer.stem(str(sentence))", '    ind+=1', 'df']
 -------------------
 
