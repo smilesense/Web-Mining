@@ -633,7 +633,7 @@ Pada program ini kita akan memanfaatkan Pandas DataFrame untuk menempatkan data 
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="menulis-script-konfigurasi-snscrape">
 <h1>Menulis Script Konfigurasi Snscrape<a class="headerlink" href="#menulis-script-konfigurasi-snscrape" title="Permalink to this headline">#</a></h1>
-<p>Pada tahap ini akan dibuat script kofigurasi scrapy, script ini sendiri berupa class yang berisi fungsi-fungsi untuk melakukan crawling dan scraping data abstrak yang berada pada website Portal Tugas Akhir Universitas Trunojoyo Madura.<p>
+<p>Pada tahap ini akan dibuat script kofigurasi Snscrape, script ini sendiri berupa modul yang berisi fungsi-fungsi untuk melakukan crawling dan scraping data tweet yang berada pada website Portal Tugas Akhir Universitas Trunojoyo Madura.<p>
 Berikut adalah penjelasan singkat mengenai script tersebut.</p>
 <hr class="docutils" />
 <br>
@@ -683,31 +683,31 @@ Berikut adalah penjelasan singkat mengenai script tersebut.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date             User  \
-0  2022-09-13 18:11:01+00:00      redimulyadi   
-1  2022-09-13 18:10:45+00:00       KangNanooo   
-2  2022-09-13 18:10:38+00:00      imamdxlabel   
-3  2022-09-13 18:10:04+00:00  doctorhotwheels   
-4  2022-09-13 18:09:02+00:00       Black_Seed   
-..                       ...              ...   
-95 2022-09-13 17:34:05+00:00       kevhunt_13   
-96 2022-09-13 17:33:45+00:00      CienkuGurdy   
-97 2022-09-13 17:33:44+00:00          Ugi7498   
-98 2022-09-13 17:33:41+00:00     2Budiswasono   
-99 2022-09-13 17:33:40+00:00        SINDOnews   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date            User  \
+0  2022-09-13 18:34:02+00:00   Joen_Sihotang   
+1  2022-09-13 18:33:52+00:00        AndiChTh   
+2  2022-09-13 18:33:50+00:00   AltintopHanif   
+3  2022-09-13 18:33:36+00:00         bakol07   
+4  2022-09-13 18:33:03+00:00   AltintopHanif   
+..                       ...             ...   
+95 2022-09-13 17:51:56+00:00    abi_nurzakii   
+96 2022-09-13 17:51:05+00:00      fajaralam9   
+97 2022-09-13 17:50:41+00:00  mustaregoes359   
+98 2022-09-13 17:50:18+00:00      miss_equal   
+99 2022-09-13 17:50:04+00:00    ApenSuhendra   
 
                                                 Tweet Label  
-0   Setelah lengser jadi Presiden Indonesia, insya...  None  
-1   Selamat ya Bu ..sudah jadi Ibunya Kadrun... ga...  None  
-2   @4zuurr444_05h1N Yang bikin meme pasti ga kena...  None  
-3   @Dewie011 Mungkin ini bangsa lain di dalam NKR...  None  
-4   @Ayang_Utriza @ainunnajib @kemkominfo @jokowi ...  None  
+0   @tvOneNews Kepada yth : pak @jokowi sebaiknya ...  None  
+1   @yosnggarang @jokowi kalo nggak pintar ya jang...  None  
+2   @Ddwie5 @maskwayofficial @jokowi bpjs nya gratis?  None  
+3   @jokowi Merdeka nya gk ngajak-ngajak rakyat wkwk.  None  
+4   @kakilangitimur @maskwayofficial @jokowi kalau...  None  
 ..                                                ...   ...  
-95  @ajiawenku @radixwp @__anomali__ @Syyahrirsuta...  None  
-96  @MasCrot13 @maskwayofficial @jokowi https://t....  None  
-97  @jokowi Bukan bebas berbicara. Tapi diberi kes...  None  
-98  @MabesTNI  🙏🏼🙏🏼 pak @jokowi https://t.co/DRsVT...  None  
-99  Jokowi Bisa Maju Jadi Cawapres, Bambang Pacul:...  None  
+95  @RadioElshinta nah dulukan @jokowi bilang kang...  None  
+96  @4_aBetterLife @Beritasatu Lebih parah lagi pe...  None  
+97                 @jokowi Saat petugas partai pidato  None  
+98  @alvinlie21 @KemenkesRI @jokowi Ini lah Indone...  None  
+99  @yosnggarang @DjuremiReinke @jokowi 8 th Rakya...  None  
 
 [100 rows x 4 columns]
 </pre></div>
@@ -751,7 +751,7 @@ if res == &#39;&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8a55ca9b-2edf-4b63-995b-13244f1e65e5">
+  <div id="df-f2b05502-5825-4d06-8747-60be7972e638">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -847,7 +847,7 @@ if res == &#39;&#39;:
 </table>
 <p>81 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-8a55ca9b-2edf-4b63-995b-13244f1e65e5')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f2b05502-5825-4d06-8747-60be7972e638')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -898,12 +898,12 @@ if res == &#39;&#39;:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-8a55ca9b-2edf-4b63-995b-13244f1e65e5 button.colab-df-convert');
+          document.querySelector('#df-f2b05502-5825-4d06-8747-60be7972e638 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-8a55ca9b-2edf-4b63-995b-13244f1e65e5');
+          const element = document.querySelector('#df-f2b05502-5825-4d06-8747-60be7972e638');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
