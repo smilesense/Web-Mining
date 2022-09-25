@@ -34,6 +34,6 @@ Here is a preview of the cell contents:
 -------------------
 ['# import StemmerFactory class', 'from Sastrawi.Stemmer.StemmerFactory import StemmerFactory', '', '# create stemmer', 'factory = StemmerFactory()']
 ...
-['ind = 0', "for sentence in df['Tweet']:", "    df['Tweet'][ind] = stemmer.stem(str(sentence))", '    ind+=1', 'df']
+['ind = 0', "for sentence in df['Tweet']:", "    df['Tweet'][ind] = stemmer.stem(str(sentence))", '    ind+=1', "df['Tweet'][2]"]
 -------------------
 
