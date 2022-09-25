@@ -440,8 +440,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#melakukan-klasifikasi-knn-data-latih-untuk-prediksi-sentimen-data-uji">
-     Melakukan klasifikasi(KNN) data latih untuk prediksi sentimen data uji
+    <a class="reference internal nav-link" href="#melakukan-klasifikasi-data-latih-menggunakan-metode-knn-untuk-memprediksi-sentimen-data-uji">
+     Melakukan klasifikasi data latih (menggunakan metode KNN) untuk memprediksi sentimen data uji
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -591,8 +591,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#melakukan-klasifikasi-knn-data-latih-untuk-prediksi-sentimen-data-uji">
-     Melakukan klasifikasi(KNN) data latih untuk prediksi sentimen data uji
+    <a class="reference internal nav-link" href="#melakukan-klasifikasi-data-latih-menggunakan-metode-knn-untuk-memprediksi-sentimen-data-uji">
+     Melakukan klasifikasi data latih (menggunakan metode KNN) untuk memprediksi sentimen data uji
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -627,6 +627,7 @@ NIM : 190411100121</p>
 <p>Penambangan web membantu meningkatkan kekuatan mesin pencari web dengan mengklasifikasikan dokumen web dan mengidentifikasi halaman web.</p>
 </section>
 </section>
+<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="instalasi-library">
 <h1>Instalasi Library<a class="headerlink" href="#instalasi-library" title="Permalink to this headline">#</a></h1>
 <p>Pada tahap ini dilakukan instalasi library-library yang nantinya dibutuhkan untuk menjalankan program, berikut adalah library yang dibutuhkan :</p>
@@ -713,30 +714,30 @@ Berikut adalah penjelasan singkat mengenai script tersebut.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date             User  \
-0  2022-09-25 18:49:26+00:00       madularang   
-1  2022-09-25 18:49:25+00:00     jkw2_periode   
-2  2022-09-25 18:49:13+00:00        fadlidzon   
-3  2022-09-25 18:49:10+00:00    sutarnogembol   
-4  2022-09-25 18:48:37+00:00        ArioFikri   
+0  2022-09-25 19:00:59+00:00    SegerMartinus   
+1  2022-09-25 19:00:19+00:00    kawanlangitku   
+2  2022-09-25 18:59:54+00:00  TinaWat28209246   
+3  2022-09-25 18:59:32+00:00        rizqiisa1   
+4  2022-09-25 18:59:14+00:00        Zyanpatra   
 ..                       ...              ...   
-95 2022-09-25 18:01:23+00:00   Parlindsiregar   
-96 2022-09-25 18:00:57+00:00   2019JokowiLNJT   
-97 2022-09-25 18:00:54+00:00        otabibar1   
-98 2022-09-25 18:00:20+00:00       Krissbee19   
-99 2022-09-25 17:59:43+00:00  AbitmaBramantya   
+95 2022-09-25 18:09:20+00:00       Waranda_Jr   
+96 2022-09-25 18:09:20+00:00   Syofian_Kuroda   
+97 2022-09-25 18:09:03+00:00        den_denai   
+98 2022-09-25 18:08:46+00:00         MPeroeck   
+99 2022-09-25 18:08:23+00:00        SSatyaris   
 
                                                 Tweet Label  
-0   @WagimanDeep212_ Ck...ck...ck\nMudahnya mencar...  None  
-1                                  #DebatPintarJokowi  None  
-2   Pemerintah Jokowi begitu bersemangat untuk mem...  None  
-3     @LOVE_AG4EVER__ @jokowi https://t.co/ZCjwylNSY3  None  
-4   Komitmen Akhiri Kemiskinan Dan Lindungi Planet...  None  
+0                                     @jokowi TERDIAM  None  
+1   @MprAldo TAMPANG2 YAMAN MODAL BACOT DOANG\nNUM...  None  
+2   @gumukcandi Ya,Tuhan g akan mengabulkan doa2 y...  None  
+3   @Sirqieee @didienAZHAR @jokowi Foto ini yg dul...  None  
+4   Program Bantuan Jokowi Mempercepat Geliat UMKM...  None  
 ..                                                ...   ...  
-95  @I17082000 @reprabo07 @msaid_didu @jokowi Ini ...  None  
-96  @Salim09735849 @M_Armand_ @NovalAssegaf Yang b...  None  
-97  @ChusnulCh__ @ganjarpranowo Manusia titipan tu...  None  
-98  “Bertemu dengan orang-orang di lapangan selalu...  None  
-99  @rsitanggang2101 @isari68 @AgusYudhoyono @PDem...  None  
+95  @yo2thok Prabowo harus jelaskan ilmu apa maksu...  None  
+96  @Syofiande5motor @budigunawan591 @binofficial_...  None  
+97  @RelawanAnies24 @cah_gembala77 @jokowi @aniesb...  None  
+98  @Tan_Mar3M @geloraco jadi pingin nanggis...pak...  None  
+99  @RelawanAnies24 @jokowi Orgasme Terlarang. htt...  None  
 
 [100 rows x 4 columns]
 </pre></div>
@@ -780,7 +781,7 @@ if res == &#39;&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-7b16d4bc-b26d-4bfb-aaa2-9f6f6f00befe">
+  <div id="df-a91c80fd-b5b7-40cf-9e1d-b1910c7d0c4f">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -876,7 +877,7 @@ if res == &#39;&#39;:
 </table>
 <p>81 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-7b16d4bc-b26d-4bfb-aaa2-9f6f6f00befe')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a91c80fd-b5b7-40cf-9e1d-b1910c7d0c4f')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -927,12 +928,12 @@ if res == &#39;&#39;:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-7b16d4bc-b26d-4bfb-aaa2-9f6f6f00befe button.colab-df-convert');
+          document.querySelector('#df-a91c80fd-b5b7-40cf-9e1d-b1910c7d0c4f button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-7b16d4bc-b26d-4bfb-aaa2-9f6f6f00befe');
+          const element = document.querySelector('#df-a91c80fd-b5b7-40cf-9e1d-b1910c7d0c4f');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1828,8 +1829,8 @@ Name: Label, dtype: object
 </div>
 </div>
 </section>
-<section id="melakukan-klasifikasi-knn-data-latih-untuk-prediksi-sentimen-data-uji">
-<h2>Melakukan klasifikasi(KNN) data latih untuk prediksi sentimen data uji<a class="headerlink" href="#melakukan-klasifikasi-knn-data-latih-untuk-prediksi-sentimen-data-uji" title="Permalink to this headline">#</a></h2>
+<section id="melakukan-klasifikasi-data-latih-menggunakan-metode-knn-untuk-memprediksi-sentimen-data-uji">
+<h2>Melakukan klasifikasi data latih (menggunakan metode KNN) untuk memprediksi sentimen data uji<a class="headerlink" href="#melakukan-klasifikasi-data-latih-menggunakan-metode-knn-untuk-memprediksi-sentimen-data-uji" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
