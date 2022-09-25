@@ -34,6 +34,6 @@ Here is a preview of the cell contents:
 -------------------
 ['# import StemmerFactory class', 'from Sastrawi.Stemmer.StemmerFactory import StemmerFactory', '', '# create stemmer', 'factory = StemmerFactory()']
 ...
-['  raise KeyboardInterrupt', 'except KeyboardInterrupt:', "  df['Tweet'][2]", 'else :', "  df['Tweet'][2]"]
+['  raise KeyboardInterrupt', 'except KeyboardInterrupt:', "  print(df['Tweet'][2])", 'else :', "  print(df['Tweet'][2])"]
 -------------------
 
