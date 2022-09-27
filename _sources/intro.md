@@ -13,7 +13,7 @@
 * - Nama
   - Bihubbil Choir Aidifta
 * - NIM
-  - Bihubbil Choir Aidifta
+  - 190411100121
 * - Kelas
   - Pencarian & Penambangan Web (A)
 * - Dosen Pengampu
