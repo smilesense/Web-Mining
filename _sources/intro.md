@@ -1,6 +1,6 @@
 # Biodata
 
-```{image} ../_static/190411100121.jpg
+```{image} ../static/190411100121.jpg
 ---
 :alt: fishy
 :class: bg-primary mb-1
