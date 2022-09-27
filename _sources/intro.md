@@ -29,7 +29,3 @@
 Buku atau halaman ini merupakan sarana yang dibuat dengan tujuan sebagai media pembelajaran dan pengumpulan tugas, khusunya terkait mata kuliah Pencarian & Penambangan Web. 
 
 ```
-
-
-```{parts}
-```
