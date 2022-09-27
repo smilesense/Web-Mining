@@ -9,14 +9,10 @@
 
 ```{admonition} Biodata Penulis
 
-Nama    : Bihubbil Choir Aidifta
----
-NIM     : 190411100121
----
-Kelas   : Pencarian & Penambangan Web (A)
----
-Prodi   : Teknik Informatika - Universitas Trunojoyo Madura**
----
+Nama    : Bihubbil Choir Aidifta<br>
+NIM     : 190411100121<br>
+Kelas   : Pencarian & Penambangan Web (A)<br>
+Prodi   : Teknik Informatika - Universitas Trunojoyo Madura<br>
 
 ```
 
