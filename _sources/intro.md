@@ -7,14 +7,14 @@
 :class: bg-primary mb-1
 :width: 200px
 :align: center
-```
-**Nama    : Bihubbil Choir Aidifta
+
+Nama    : Bihubbil Choir Aidifta
 ---
- NIM     : 190411100121
+NIM     : 190411100121
 ---
- Kelas   : Pencarian & Penambangan Web (A)
+Kelas   : Pencarian & Penambangan Web (A)
 ---
- Prodi   : Teknik Informatika - Universitas Trunojoyo Madura**
+Prodi   : Teknik Informatika - Universitas Trunojoyo Madura**
 ---
 
 ```
