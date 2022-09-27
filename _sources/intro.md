@@ -8,6 +8,7 @@
 ```
 
 ```{list-table}
+:max-width : 50%
 
 * - Nama
   - Bihubbil Choir Aidifta
