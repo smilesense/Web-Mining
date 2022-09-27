@@ -1,13 +1,12 @@
 # Biodata
 
 ```{admonition} Biodata Penulis
-
 ```{image} ../webmining/_static/190411100121.jpg
 :alt: fishy
 :class: bg-primary mb-1
 :width: 200px
 :align: center
-
+```
 Nama    : Bihubbil Choir Aidifta
 ---
 NIM     : 190411100121
