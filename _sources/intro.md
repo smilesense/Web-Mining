@@ -1,5 +1,7 @@
 # Biodata
 
+```{admonition} Biodata
+
 ```{image} ../webmining/_static/190411100121.jpg
 :alt: fishy
 :class: bg-primary mb-1
@@ -19,6 +21,9 @@
 * - Prodi
   - Teknik Informatika
 ```
+
+```
+
 
 This is a small sample book to give you a feel for how book content is
 structured.
