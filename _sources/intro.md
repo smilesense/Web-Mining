@@ -7,8 +7,7 @@
 :class: bg-primary mb-1
 :width: 200px
 :align: center
-
-
+```
 ```{list-table}
 :max-width : 50%
 
@@ -20,8 +19,7 @@
   - Pencarian & Penambangan Web (A)
 * - Prodi
   - Teknik Informatika
-
-
+```
 ```
 
 
