@@ -7,6 +7,19 @@
 :align: center
 ```
 
+```{list-table}
+:align: center
+
+* - Nama
+  - Bihubbil Choir Aidifta
+* - NIM
+  - 190411100121
+* - Kelas
+  - Pencarian & Penambangan Web (A)
+* - Prodi
+  - Teknik Informatika
+```
+
 This is a small sample book to give you a feel for how book content is
 structured.
 It shows off a few of the major file types, as well as some sample content.
@@ -14,5 +27,5 @@ It does not go in-depth into any particular topic - check out [the Jupyter Book 
 
 Check out the content pages bundled with this sample book to see more.
 
-```{tableofcontents}
+```{chapters}
 ```
