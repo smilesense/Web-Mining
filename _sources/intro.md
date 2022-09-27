@@ -20,7 +20,7 @@
   - Teknik Informatika - Universitas Trunojoyo Madura
 ```
 
-```
+
 
 ```{admonition} Biodata Penulis
 Halaman ini merupakan halaman yang dibuat dengan tujuan sebagai sarana
