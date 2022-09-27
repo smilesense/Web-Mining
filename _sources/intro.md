@@ -9,12 +9,12 @@
 :class: bg-primary mb-1
 :width: 200px
 :align: center
-```
 
 **Nama    : Bihubbil Choir Aidifta**<br>
 NIM     : 190411100121<br>
 Kelas   : Pencarian & Penambangan Web (A)<br>
 Prodi   : Teknik Informatika - Universitas Trunojoyo Madura<br>
+```
 
 ```
 
