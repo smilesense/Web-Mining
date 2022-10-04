@@ -34,6 +34,6 @@ Here is a preview of the cell contents:
 -------------------
 ['from google.colab import data_table', 'data_table.enable_dataframe_formatter()', 'def terms(dataframe):', '  pd.options.mode.chained_assignment = None', '  pd.options.display.max_colwidth = None']
 ...
-['  ', '', 'terms(df2)', "df4 = pd.read_csv('my_data.csv')", 'df4']
+['        a+=1', "  df3.to_csv(r'my_data.csv', index=False)", '  ', '', 'terms(df2)']
 -------------------
 
