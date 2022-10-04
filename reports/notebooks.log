@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['def terms(dataframe):', '  # pd.options.mode.chained_assignment = None', '  # pd.options.display.max_colwidth = None', '  # pd.options.display.max_columns = None', '  # pd.options.display.max_rows = None']
+['from google.colab import data_table', 'data_table.enable_dataframe_formatter()', 'def terms(dataframe):', '  pd.options.mode.chained_assignment = None', '  pd.options.display.max_colwidth = None']
 ...
-["  df3.to_csv(r'my_data.csv', index=False)", '  return df3', '  ', '', 'terms(df2)']
+['  ', '', 'terms(df2)', "df4 = pd.read_csv('my_data.csv')", 'df4']
 -------------------
 
