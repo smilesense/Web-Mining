@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['def terms(dataframe):', '  # pd.options.mode.chained_assignment = None', '  # pd.options.display.max_colwidth = None', '  # pd.options.display.max_columns = None', '  # pd.options.display.max_rows = None']
+['# import StemmerFactory class', 'from Sastrawi.Stemmer.StemmerFactory import StemmerFactory', '', '# create stemmer', 'factory = StemmerFactory()']
 ...
-['        a+=1', "  df3.to_csv(r'my_data.csv', index=False)", '  ', '', 'terms(df2)']
+['  raise KeyboardInterrupt', 'except KeyboardInterrupt:', "  print(df['Tweet'][2])", 'else :', "  print(df['Tweet'][2])"]
 -------------------
 
