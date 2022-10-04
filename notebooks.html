@@ -478,9 +478,9 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prediksi-jenis-sentimen-menggunakan-metode-klasifikasi-knn">
+  <a class="reference internal nav-link" href="#klasifikasi-sentimen-menggunakan-metode-knn">
    <strong>
-    Prediksi jenis sentimen menggunakan metode klasifikasi KNN
+    Klasifikasi sentimen menggunakan metode [KNN]
    </strong>
   </a>
   <ul class="visible nav section-nav flex-column">
@@ -500,6 +500,25 @@ title="Print to PDF"
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering-sentimen-menggunakan-metode-kmeans">
+   <strong>
+    Clustering sentimen menggunakan metode [KMEANS]
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reduksi-dimensi-menggunakan-metode-principal-component-analysis-pca">
+     Reduksi dimensi menggunakan metode [Principal Component Analysis(PCA)]
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hasil-clustering">
+     Hasil Clustering
+    </a>
    </li>
   </ul>
  </li>
@@ -664,9 +683,9 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prediksi-jenis-sentimen-menggunakan-metode-klasifikasi-knn">
+  <a class="reference internal nav-link" href="#klasifikasi-sentimen-menggunakan-metode-knn">
    <strong>
-    Prediksi jenis sentimen menggunakan metode klasifikasi KNN
+    Klasifikasi sentimen menggunakan metode [KNN]
    </strong>
   </a>
   <ul class="visible nav section-nav flex-column">
@@ -686,6 +705,25 @@ title="Print to PDF"
       </a>
      </li>
     </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering-sentimen-menggunakan-metode-kmeans">
+   <strong>
+    Clustering sentimen menggunakan metode [KMEANS]
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reduksi-dimensi-menggunakan-metode-principal-component-analysis-pca">
+     Reduksi dimensi menggunakan metode [Principal Component Analysis(PCA)]
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hasil-clustering">
+     Hasil Clustering
+    </a>
    </li>
   </ul>
  </li>
@@ -776,6 +814,8 @@ Berikut adalah penjelasan singkat mengenai script tersebut.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">snscrape.modules.twitter</span> <span class="k">as</span> <span class="nn">sntwitter</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># from google.colab import data_table</span>
+<span class="c1"># data_table.enable_dataframe_formatter()</span>
 
 <span class="n">search_query</span> <span class="o">=</span> <span class="s2">&quot;Jokowi&quot;</span>
 <span class="n">jumlah_tweets</span> <span class="o">=</span> <span class="mi">100</span>
@@ -795,31 +835,31 @@ Berikut adalah penjelasan singkat mengenai script tersebut.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date            User  \
-0  2022-09-27 18:19:34+00:00   RiboetKenArok   
-1  2022-09-27 18:19:25+00:00  BUKAN_THANOS__   
-2  2022-09-27 18:19:21+00:00    fariji_lacak   
-3  2022-09-27 18:18:52+00:00  YantoS09771908   
-4  2022-09-27 18:18:39+00:00      AnakSarah1   
-..                       ...             ...   
-95 2022-09-27 17:55:34+00:00      lenterakas   
-96 2022-09-27 17:55:31+00:00        IbuRusun   
-97 2022-09-27 17:55:04+00:00  jeffrysondakh1   
-98 2022-09-27 17:54:35+00:00         Bolanet   
-99 2022-09-27 17:54:22+00:00    RadarKorupsi   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date             User  \
+0  2022-10-04 15:41:26+00:00  LaNyallaAcademy   
+1  2022-10-04 15:41:21+00:00        Whoiscem1   
+2  2022-10-04 15:41:09+00:00        Diek_Clev   
+3  2022-10-04 15:41:01+00:00    PutraWahhydin   
+4  2022-10-04 15:41:01+00:00         om_nawin   
+..                       ...              ...   
+95 2022-10-04 15:30:34+00:00     Peatland_Boy   
+96 2022-10-04 15:30:27+00:00       HABIBIFALS   
+97 2022-10-04 15:30:18+00:00       politikana   
+98 2022-10-04 15:30:14+00:00  Didin_Mahmuddin   
+99 2022-10-04 15:30:06+00:00  sabar_setiabudi   
 
                                                 Tweet Label  
-0   @OposisiCerdas Apapun bau-bau kroni Jokowi, sa...  None  
-1   @veroaktivis @_KangAen Bacot lu yg suka nyalah...  None  
-2   @YRadianto1 @Nitizen_Zen Insya Allah Jokowi 3 ...  None  
-3   @kangdede78 @jokowi Coba dicek, itu pak Jokowi...  None  
-4   Dalam kunjungan kerjanya di Provinsi Maluku, P...  None  
+0   @mufimizan76 @TetiMbugua @SonjayaSyaiful @joko...  None  
+1              Pak @jokowi 😭😭 https://t.co/u4ILZnY6EA  None  
+2   @kuda_lumpia @hobbyngntt @nadiakhaarisma @ganj...  None  
+3   Diusulkan duet dengan Jokowi sebagai Capres-Ca...  None  
+4   @IndonesiaR4Y4 @QR_Caniago @Urrangawak Iya bai...  None  
 ..                                                ...   ...  
-95                                       @jokowi Bodo  None  
-96  Presiden @Jokowi membagikan Bantuan Sosial di ...  None  
-97  SangPemimpinRakyat @ganjarpranowo 🇮🇩\n\n#Kerja...  None  
-98  Warganet Salfok Wasit Laga Timnas Indonesia vs...  None  
-99  Sekber Prabowo-Jokowi Gugat UU Pemilu ke MK, H...  None  
+95  @jokowi stok emas BI nggak ditambah? https://t...  None  
+96  @Muhammad_Saewad Penerus jokowi??? Jokowi udah...  None  
+97  Pak @jokowi dulu Anda dipilih karena banyak yg...  None  
+98  Hati sp tdk bersedih kalau seperti ini pak @jo...  None  
+99  LAGU   , \n         \nPAK HAJI  GANJAR PRANOWO...  None  
 
 [100 rows x 4 columns]
 </pre></div>
@@ -863,7 +903,7 @@ if res == &#39;&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a86b544a-6d42-4b83-9c72-36a5f809ed3f">
+  <div id="df-819356b8-17f8-4aa1-a1b4-ba23a875c45b">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -959,7 +999,7 @@ if res == &#39;&#39;:
 </table>
 <p>81 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a86b544a-6d42-4b83-9c72-36a5f809ed3f')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-819356b8-17f8-4aa1-a1b4-ba23a875c45b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1010,12 +1050,12 @@ if res == &#39;&#39;:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a86b544a-6d42-4b83-9c72-36a5f809ed3f button.colab-df-convert');
+          document.querySelector('#df-819356b8-17f8-4aa1-a1b4-ba23a875c45b button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a86b544a-6d42-4b83-9c72-36a5f809ed3f');
+          const element = document.querySelector('#df-819356b8-17f8-4aa1-a1b4-ba23a875c45b');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1180,7 +1220,7 @@ if res == &#39;&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-f480eebd-57b4-4ef2-b355-beae4d123bc2">
+  <div id="df-b265d862-f292-43c4-a7f0-cfeddfaa96df">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1276,7 +1316,7 @@ if res == &#39;&#39;:
 </table>
 <p>81 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-f480eebd-57b4-4ef2-b355-beae4d123bc2')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b265d862-f292-43c4-a7f0-cfeddfaa96df')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1327,12 +1367,12 @@ if res == &#39;&#39;:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-f480eebd-57b4-4ef2-b355-beae4d123bc2 button.colab-df-convert');
+          document.querySelector('#df-b265d862-f292-43c4-a7f0-cfeddfaa96df button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-f480eebd-57b4-4ef2-b355-beae4d123bc2');
+          const element = document.querySelector('#df-b265d862-f292-43c4-a7f0-cfeddfaa96df');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1586,127 +1626,127 @@ Name: Label, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.13163071, 0.        , 0.        , 0.06335554, 0.00166439,
-       0.06727511, 0.        , 0.00789248, 0.        , 0.05289233,
-       0.02872822, 0.        , 0.        , 0.00438089, 0.        ,
-       0.04565268, 0.        , 0.06373931, 0.00403387, 0.        ,
-       0.        , 0.        , 0.        , 0.04431627, 0.        ,
-       0.        , 0.        , 0.01712029, 0.        , 0.10036255,
-       0.        , 0.        , 0.0272451 , 0.        , 0.        ,
-       0.        , 0.04870408, 0.        , 0.01368126, 0.        ,
-       0.        , 0.        , 0.03611782, 0.        , 0.0269948 ,
-       0.        , 0.        , 0.        , 0.08156382, 0.        ,
-       0.        , 0.        , 0.00480294, 0.        , 0.        ,
-       0.03393089, 0.        , 0.0046434 , 0.        , 0.        ,
-       0.        , 0.00815387, 0.02520288, 0.08395531, 0.00121893,
-       0.        , 0.01085876, 0.        , 0.0981331 , 0.        ,
-       0.        , 0.0261232 , 0.02567601, 0.00952699, 0.        ,
-       0.1514067 , 0.        , 0.00425848, 0.06303209, 0.        ,
-       0.03959288, 0.09824922, 0.01270883, 0.05915305, 0.        ,
-       0.00998829, 0.11401491, 0.05590899, 0.        , 0.        ,
-       0.        , 0.        , 0.        , 0.        , 0.0592766 ,
-       0.05169386, 0.        , 0.        , 0.        , 0.0798088 ,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.12127354, 0.        , 0.0042269 , 0.00699421, 0.        ,
+       0.        , 0.07474288, 0.04966779, 0.        , 0.00683063,
+       0.        , 0.01983878, 0.01514787, 0.        , 0.03425817,
+       0.        , 0.02325048, 0.        , 0.00755097, 0.        ,
+       0.        , 0.        , 0.        , 0.02958124, 0.11113822,
+       0.0470017 , 0.        , 0.        , 0.00163374, 0.02809478,
+       0.09016512, 0.03950089, 0.03073458, 0.0838875 , 0.        ,
+       0.0504196 , 0.        , 0.05528137, 0.00556978, 0.        ,
        0.        , 0.        , 0.        , 0.        , 0.        ,
-       0.        , 0.        , 0.01741716, 0.0242632 , 0.        ,
-       0.016413  , 0.00810727, 0.01419334, 0.        , 0.05710827,
-       0.05078591, 0.02308605, 0.        , 0.01886169, 0.00200709,
-       0.06134003, 0.        , 0.        , 0.        , 0.        ,
-       0.        , 0.12823947, 0.09146633, 0.        , 0.0083536 ,
-       0.        , 0.        , 0.00053357, 0.03098123, 0.0281509 ,
-       0.09326669, 0.        , 0.00425057, 0.        , 0.        ,
-       0.06060514, 0.        , 0.05113676, 0.04629009, 0.        ,
-       0.        , 0.13473748, 0.05694259, 0.        , 0.        ,
-       0.        , 0.09059383, 0.04571504, 0.12475877, 0.02548925,
+       0.00399109, 0.02015726, 0.07092504, 0.        , 0.        ,
+       0.        , 0.02919395, 0.11692813, 0.        , 0.01894918,
+       0.        , 0.        , 0.03459636, 0.00168568, 0.        ,
+       0.        , 0.01157298, 0.        , 0.03074614, 0.03013717,
+       0.        , 0.05682064, 0.        , 0.        , 0.08809176,
+       0.00116724, 0.        , 0.        , 0.01443068, 0.06813941,
+       0.        , 0.        , 0.07087196, 0.        , 0.00868995,
+       0.05538935, 0.00112119, 0.        , 0.        , 0.        ,
+       0.        , 0.11225434, 0.00526932, 0.        , 0.        ,
+       0.        , 0.        , 0.00290584, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.02201402,
+       0.10780565, 0.        , 0.        , 0.03304109, 0.        ,
+       0.1285291 , 0.03234871, 0.01570563, 0.        , 0.01895113,
+       0.        , 0.05297232, 0.        , 0.03808231, 0.05584676,
+       0.02360042, 0.        , 0.05207655, 0.03220002, 0.02245951,
+       0.01842509, 0.00640817, 0.        , 0.02388971, 0.01168125,
+       0.        , 0.01945558, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.04965337,
+       0.        , 0.08063047, 0.        , 0.        , 0.03805108,
+       0.        , 0.        , 0.        , 0.02681214, 0.        ,
+       0.05849229, 0.06387368, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.02003073, 0.01260616, 0.05901665,
+       0.06359469, 0.06690492, 0.06635077, 0.04611204, 0.02473111,
+       0.        , 0.        , 0.03682227, 0.        , 0.        ,
+       0.        , 0.        , 0.0157351 , 0.        , 0.05122117,
+       0.08408306, 0.        , 0.02155466, 0.        , 0.03674473,
+       0.00334168, 0.02855818, 0.10346415, 0.0440835 , 0.        ,
+       0.        , 0.        , 0.01574656, 0.0089103 , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.00276324,
+       0.        , 0.12556915, 0.06913226, 0.        , 0.        ,
+       0.03256739, 0.        , 0.0217317 , 0.02135861, 0.06032473,
+       0.        , 0.        , 0.02400858, 0.        , 0.        ,
+       0.        , 0.01402866, 0.        , 0.        , 0.00881171,
+       0.        , 0.01930727, 0.        , 0.        , 0.09888883,
+       0.07332859, 0.        , 0.00300489, 0.00833023, 0.        ,
+       0.        , 0.14199551, 0.        , 0.        , 0.01283833,
+       0.        , 0.00100539, 0.        , 0.        , 0.06901156,
+       0.        , 0.01888582, 0.02525438, 0.00051102, 0.        ,
+       0.        , 0.        , 0.09842928, 0.06103611, 0.00292917,
+       0.01661886, 0.12460523, 0.0118738 , 0.        , 0.00204706,
+       0.00360376, 0.        , 0.        , 0.04627812, 0.17658911,
+       0.        , 0.        , 0.        , 0.0887511 , 0.01542943,
+       0.02286444, 0.        , 0.00561493, 0.        , 0.01188285,
+       0.        , 0.        , 0.00746571, 0.        , 0.        ,
+       0.        , 0.14696139, 0.        , 0.01008026, 0.        ,
+       0.        , 0.        , 0.08817693, 0.01869599, 0.        ,
+       0.01843438, 0.02145322, 0.        , 0.08315124, 0.04550909,
+       0.        , 0.0031309 , 0.02429202, 0.00378022, 0.        ,
+       0.04197773, 0.09638331, 0.        , 0.01699244, 0.        ,
+       0.        , 0.        , 0.        , 0.00381515, 0.        ,
+       0.05486275, 0.04510744, 0.00241794, 0.03353051, 0.        ,
+       0.        , 0.00979153, 0.03421878, 0.        , 0.        ,
+       0.11765326, 0.0283343 , 0.02778194, 0.        , 0.02714321,
+       0.        , 0.15153564, 0.        , 0.06479193, 0.        ,
+       0.01382348, 0.02063689, 0.        , 0.        , 0.06239353,
+       0.01173473, 0.        , 0.01641758, 0.        , 0.        ,
+       0.04100715, 0.0119678 , 0.02823021, 0.        , 0.        ,
+       0.        , 0.02627645, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.02855054, 0.        ,
+       0.        , 0.10627301, 0.        , 0.01362685, 0.04997123,
+       0.        , 0.06019357, 0.        , 0.00055234, 0.        ,
+       0.        , 0.        , 0.00051804, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.03710721, 0.04448648,
+       0.08630473, 0.        , 0.01397026, 0.        , 0.00756244,
+       0.        , 0.00145067, 0.0119601 , 0.        , 0.        ,
+       0.00888485, 0.        , 0.        , 0.        , 0.00933077,
+       0.        , 0.        , 0.00686037, 0.01647093, 0.        ,
+       0.        , 0.06591491, 0.        , 0.01184464, 0.        ,
+       0.05638393, 0.        , 0.0568851 , 0.        , 0.0762752 ,
+       0.        , 0.        , 0.07180853, 0.00581494, 0.        ,
+       0.03024776, 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.02909466, 0.        , 0.        ,
+       0.        , 0.03703682, 0.        , 0.00894457, 0.        ,
+       0.        , 0.        , 0.05214983, 0.        , 0.00100333,
+       0.        , 0.        , 0.01182613, 0.018707  , 0.        ,
+       0.04487743, 0.03041716, 0.00426538, 0.12380263, 0.        ,
+       0.04221007, 0.00032576, 0.        , 0.03468642, 0.        ,
+       0.        , 0.0267219 , 0.05293133, 0.        , 0.        ,
+       0.00312555, 0.05199192, 0.        , 0.01499026, 0.        ,
+       0.05298555, 0.05360832, 0.03099694, 0.01070999, 0.        ,
+       0.        , 0.0075348 , 0.        , 0.        , 0.01220079,
+       0.        , 0.04688681, 0.        , 0.        , 0.0389595 ,
+       0.00331359, 0.01534992, 0.05959763, 0.0049287 , 0.        ,
+       0.        , 0.06501464, 0.02789578, 0.04868048, 0.        ,
+       0.01950409, 0.10901343, 0.04838507, 0.        , 0.00761387,
+       0.        , 0.        , 0.        , 0.0107765 , 0.        ,
+       0.        , 0.02185737, 0.        , 0.00159225, 0.        ,
+       0.00736077, 0.        , 0.        , 0.0120241 , 0.04124436,
+       0.03487164, 0.        , 0.        , 0.00122499, 0.        ,
+       0.        , 0.00883919, 0.        , 0.        , 0.10062396,
+       0.12802498, 0.        , 0.        , 0.16135223, 0.01010117,
+       0.        , 0.        , 0.01997219, 0.03436135, 0.        ,
+       0.        , 0.00431293, 0.        , 0.05362208, 0.        ,
+       0.00579582, 0.07505086, 0.0523221 , 0.        , 0.        ,
+       0.        , 0.08483091, 0.02597752, 0.        , 0.        ,
        0.        , 0.        , 0.        , 0.        , 0.        ,
-       0.        , 0.        , 0.        , 0.02081011, 0.00369349,
-       0.01944771, 0.        , 0.        , 0.05197005, 0.        ,
-       0.03401779, 0.01954389, 0.04529129, 0.        , 0.        ,
-       0.0150287 , 0.        , 0.        , 0.03200274, 0.        ,
-       0.        , 0.02778983, 0.0298541 , 0.06690617, 0.02256297,
-       0.        , 0.02553798, 0.        , 0.        , 0.01565067,
-       0.00969359, 0.02759045, 0.05595684, 0.        , 0.        ,
-       0.03407043, 0.03673949, 0.00771085, 0.        , 0.        ,
-       0.        , 0.01695034, 0.        , 0.01396536, 0.        ,
-       0.01815311, 0.07095466, 0.03896893, 0.        , 0.01096272,
-       0.01168183, 0.        , 0.02989678, 0.        , 0.01183867,
-       0.00733796, 0.0300355 , 0.06323631, 0.        , 0.01439747,
-       0.        , 0.06315868, 0.        , 0.        , 0.        ,
-       0.        , 0.01252655, 0.        , 0.01800282, 0.        ,
-       0.09668784, 0.        , 0.        , 0.00332433, 0.        ,
-       0.        , 0.        , 0.        , 0.        , 0.        ,
-       0.02930165, 0.05095445, 0.        , 0.        , 0.        ,
-       0.        , 0.        , 0.02359139, 0.12109543, 0.01789415,
-       0.        , 0.        , 0.        , 0.00515214, 0.        ,
-       0.        , 0.        , 0.01954376, 0.        , 0.06932095,
-       0.        , 0.        , 0.        , 0.        , 0.        ,
-       0.        , 0.        , 0.02397788, 0.        , 0.        ,
-       0.042624  , 0.        , 0.        , 0.01621369, 0.04452453,
-       0.        , 0.        , 0.        , 0.04151518, 0.00835619,
-       0.        , 0.        , 0.02721256, 0.        , 0.010607  ,
-       0.        , 0.00939218, 0.        , 0.01654482, 0.        ,
-       0.        , 0.02038575, 0.        , 0.03610913, 0.        ,
-       0.        , 0.        , 0.02094362, 0.        , 0.00155705,
-       0.        , 0.01417726, 0.        , 0.02456265, 0.        ,
-       0.        , 0.        , 0.02558885, 0.        , 0.05890754,
-       0.        , 0.        , 0.00538634, 0.00849953, 0.        ,
-       0.07923555, 0.1187422 , 0.        , 0.01608707, 0.        ,
-       0.        , 0.        , 0.        , 0.        , 0.        ,
-       0.        , 0.        , 0.        , 0.        , 0.03644353,
-       0.        , 0.        , 0.01581916, 0.        , 0.04133853,
-       0.        , 0.        , 0.04733903, 0.05628341, 0.00050785,
-       0.        , 0.        , 0.05010581, 0.04244393, 0.        ,
-       0.04984558, 0.02077887, 0.00974956, 0.        , 0.        ,
-       0.        , 0.        , 0.        , 0.01973258, 0.02313747,
-       0.        , 0.03020527, 0.04883203, 0.        , 0.        ,
-       0.05267038, 0.03348637, 0.0036753 , 0.        , 0.        ,
-       0.        , 0.050441  , 0.        , 0.        , 0.        ,
-       0.        , 0.        , 0.00653006, 0.        , 0.015333  ,
-       0.        , 0.06857959, 0.07177668, 0.        , 0.03578113,
-       0.        , 0.        , 0.        , 0.        , 0.09334995,
-       0.        , 0.03869127, 0.        , 0.01929783, 0.        ,
-       0.        , 0.01527017, 0.01842094, 0.        , 0.0031835 ,
-       0.09561144, 0.03878881, 0.00466364, 0.        , 0.00849068,
-       0.0556161 , 0.02605862, 0.        , 0.00025019, 0.02917956,
-       0.        , 0.03371629, 0.06394488, 0.00492041, 0.07794135,
-       0.01999391, 0.        , 0.        , 0.0113386 , 0.05564169,
-       0.03641761, 0.06056735, 0.00228989, 0.        , 0.01000054,
-       0.        , 0.00643316, 0.        , 0.        , 0.00387234,
-       0.        , 0.11254984, 0.02998815, 0.        , 0.02469857,
-       0.        , 0.        , 0.        , 0.        , 0.00408107,
-       0.        , 0.06625553, 0.03760282, 0.        , 0.01061149,
-       0.        , 0.05343776, 0.08271959, 0.        , 0.01085403,
-       0.        , 0.04939527, 0.0506551 , 0.07119771, 0.        ,
-       0.        , 0.06309474, 0.        , 0.01742158, 0.00295895,
-       0.00244703, 0.04774635, 0.        , 0.05080371, 0.        ,
-       0.00133571, 0.03434783, 0.04393452, 0.02947549, 0.01989623,
-       0.        , 0.02084803, 0.        , 0.        , 0.01596732,
-       0.01154439, 0.12721681, 0.        , 0.        , 0.        ,
-       0.05035723, 0.        , 0.03630191, 0.        , 0.        ,
-       0.05245545, 0.00591353, 0.        , 0.        , 0.        ,
-       0.        , 0.        , 0.        , 0.12053697, 0.        ,
-       0.        , 0.        , 0.00259309, 0.        , 0.        ,
-       0.01585371, 0.00461514, 0.02577309, 0.        , 0.        ,
-       0.        , 0.02987906, 0.        , 0.01043154, 0.03820827,
-       0.        , 0.        , 0.08166632, 0.        , 0.        ,
-       0.        , 0.06554272, 0.02441223, 0.        , 0.        ,
-       0.02553564, 0.        , 0.05853315, 0.03529495, 0.04928435,
-       0.0283138 , 0.        , 0.        , 0.06709757, 0.        ,
-       0.        , 0.00634615, 0.019229  , 0.        , 0.        ,
-       0.        , 0.02909594, 0.04266829, 0.        , 0.00799656,
-       0.00345938, 0.09650177, 0.        , 0.        , 0.04173827,
-       0.07614321, 0.        , 0.01696221, 0.00051448, 0.        ,
-       0.04645906, 0.00803065, 0.        , 0.08992573, 0.01453571,
-       0.0419539 , 0.01307576, 0.02110728, 0.        , 0.        ,
-       0.        , 0.        , 0.        , 0.        , 0.04024069,
-       0.07219835, 0.        , 0.        , 0.04910934, 0.01220091,
-       0.        , 0.04276463, 0.        , 0.        , 0.        ,
-       0.00854468, 0.        , 0.01795452, 0.        , 0.        ,
-       0.        , 0.02674083, 0.        , 0.07039251, 0.        ,
-       0.        , 0.03991285, 0.        , 0.02491138, 0.        ,
-       0.        , 0.        , 0.00057733, 0.        , 0.00849162,
-       0.01361225, 0.03099562, 0.        , 0.        , 0.01420026,
-       0.01128517, 0.        , 0.03541889, 0.        , 0.        ,
-       0.        , 0.06373514, 0.04925976])
+       0.        , 0.09264601, 0.02830626, 0.04382873, 0.04917618,
+       0.        , 0.04679123, 0.        , 0.05002406, 0.        ,
+       0.06074436, 0.        , 0.        , 0.        , 0.00864279,
+       0.        , 0.        , 0.        , 0.        , 0.0265449 ,
+       0.0887314 , 0.01929867, 0.02693284, 0.        , 0.        ,
+       0.0310017 , 0.        , 0.        , 0.13520141, 0.        ,
+       0.        , 0.        , 0.        , 0.02442172, 0.        ,
+       0.        , 0.        , 0.03319345, 0.        , 0.04917562,
+       0.        , 0.08065906, 0.06899939, 0.        , 0.        ,
+       0.14217496, 0.        , 0.00105752, 0.        , 0.        ,
+       0.00267343, 0.        , 0.02967415, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.0010913 ,
+       0.        , 0.00577943, 0.0405434 , 0.02862397, 0.0940193 ,
+       0.13557771, 0.0083767 , 0.00387179, 0.00454275, 0.        ,
+       0.        , 0.01246743, 0.03118476, 0.        , 0.        ,
+       0.        , 0.00383202, 0.        ])
 </pre></div>
 </div>
 </div>
@@ -1720,25 +1760,2528 @@ Name: Label, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mutual_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">mutual_info</span><span class="p">)</span>
 <span class="n">mutual_info</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span>
 <span class="n">mutual_info</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">tetdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mutual_info</span><span class="p">)</span>
+<span class="n">tetdf</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>in                  0.151407
-n                   0.134737
-jokowi              0.131631
-klw                 0.128239
-asem                0.127217
-                      ...   
-sedap               0.000000
-smarternotharder    0.000000
-aku                 0.000000
-mu                  0.000000
-tuh                 0.000000
-Length: 603, dtype: float64
-</pre></div>
+<div class="output text_html">
+  <div id="df-98611e49-1b9e-45d3-b7b3-5b9a6329517d">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>jokowi</th>
+      <td>0.121274</td>
+    </tr>
+    <tr>
+      <th>yg</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>presiden</th>
+      <td>0.004227</td>
+    </tr>
+    <tr>
+      <th>gak</th>
+      <td>0.006994</td>
+    </tr>
+    <tr>
+      <th>ga</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bangun</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bbm</th>
+      <td>0.074743</td>
+    </tr>
+    <tr>
+      <th>aja</th>
+      <td>0.049668</td>
+    </tr>
+    <tr>
+      <th>nya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>demo</th>
+      <td>0.006831</td>
+    </tr>
+    <tr>
+      <th>rakyat</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bjorka</th>
+      <td>0.019839</td>
+    </tr>
+    <tr>
+      <th>naik</th>
+      <td>0.015148</td>
+    </tr>
+    <tr>
+      <th>perintah</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>orang</th>
+      <td>0.034258</td>
+    </tr>
+    <tr>
+      <th>subsidi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tau</th>
+      <td>0.023250</td>
+    </tr>
+    <tr>
+      <th>negeri</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>anies</th>
+      <td>0.007551</td>
+    </tr>
+    <tr>
+      <th>kaya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bantu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kerja</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jawa</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>to</th>
+      <td>0.029581</td>
+    </tr>
+    <tr>
+      <th>negara</th>
+      <td>0.111138</td>
+    </tr>
+    <tr>
+      <th>ya</th>
+      <td>0.047002</td>
+    </tr>
+    <tr>
+      <th>data</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>amp</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>periode</th>
+      <td>0.001634</td>
+    </tr>
+    <tr>
+      <th>tambal</th>
+      <td>0.028095</td>
+    </tr>
+    <tr>
+      <th>harga</th>
+      <td>0.090165</td>
+    </tr>
+    <tr>
+      <th>biar</th>
+      <td>0.039501</td>
+    </tr>
+    <tr>
+      <th>hoax</th>
+      <td>0.030735</td>
+    </tr>
+    <tr>
+      <th>janji</th>
+      <td>0.083888</td>
+    </tr>
+    <tr>
+      <th>surplus</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>apbn</th>
+      <td>0.050420</td>
+    </tr>
+    <tr>
+      <th>blt</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>nama</th>
+      <td>0.055281</td>
+    </tr>
+    <tr>
+      <th>bendung</th>
+      <td>0.005570</td>
+    </tr>
+    <tr>
+      <th>of</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>indonesia</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>penuh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dasar</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tuh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kompeten</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>demokrat</th>
+      <td>0.003991</td>
+    </tr>
+    <tr>
+      <th>ganti</th>
+      <td>0.020157</td>
+    </tr>
+    <tr>
+      <th>ekonomi</th>
+      <td>0.070925</td>
+    </tr>
+    <tr>
+      <th>pasang</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tuju</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>percaya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jabat</th>
+      <td>0.029194</td>
+    </tr>
+    <tr>
+      <th>dosa</th>
+      <td>0.116928</td>
+    </tr>
+    <tr>
+      <th>jis</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>0.018949</td>
+    </tr>
+    <tr>
+      <th>samean</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>foto</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>pengaruh</th>
+      <td>0.034596</td>
+    </tr>
+    <tr>
+      <th>laju</th>
+      <td>0.001686</td>
+    </tr>
+    <tr>
+      <th>inflasi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>berita</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>lanjut</th>
+      <td>0.011573</td>
+    </tr>
+    <tr>
+      <th>anak</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>klo</th>
+      <td>0.030746</td>
+    </tr>
+    <tr>
+      <th>uang</th>
+      <td>0.030137</td>
+    </tr>
+    <tr>
+      <th>bagus</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>aceh</th>
+      <td>0.056821</td>
+    </tr>
+    <tr>
+      <th>beli</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>deh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>raja</th>
+      <td>0.088092</td>
+    </tr>
+    <tr>
+      <th>ngibul</th>
+      <td>0.001167</td>
+    </tr>
+    <tr>
+      <th>klemer</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jakarta</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ambassador</th>
+      <td>0.014431</td>
+    </tr>
+    <tr>
+      <th>president</th>
+      <td>0.068139</td>
+    </tr>
+    <tr>
+      <th>in</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>s</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>suara</th>
+      <td>0.070872</td>
+    </tr>
+    <tr>
+      <th>adlh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tuhan</th>
+      <td>0.008690</td>
+    </tr>
+    <tr>
+      <th>mundur</th>
+      <td>0.055389</td>
+    </tr>
+    <tr>
+      <th>usaha</th>
+      <td>0.001121</td>
+    </tr>
+    <tr>
+      <th>rintis</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bin</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>udah</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>gimana</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sampe</th>
+      <td>0.112254</td>
+    </tr>
+    <tr>
+      <th>sih</th>
+      <td>0.005269</td>
+    </tr>
+    <tr>
+      <th>aman</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jujur</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>udh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>itung</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>an</th>
+      <td>0.002906</td>
+    </tr>
+    <tr>
+      <th>politik</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>paham</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>hilang</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>contoh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bentuk</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tim</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>khusus</th>
+      <td>0.022014</td>
+    </tr>
+    <tr>
+      <th>serang</th>
+      <td>0.107806</td>
+    </tr>
+    <tr>
+      <th>hacker</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ngeri</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kelompok</th>
+      <td>0.033041</td>
+    </tr>
+    <tr>
+      <th>salah</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kg</th>
+      <td>0.128529</td>
+    </tr>
+    <tr>
+      <th>turun</th>
+      <td>0.032349</td>
+    </tr>
+    <tr>
+      <th>sulit</th>
+      <td>0.015706</td>
+    </tr>
+    <tr>
+      <th>dr</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>coba</th>
+      <td>0.018951</td>
+    </tr>
+    <tr>
+      <th>tawar</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>menteri</th>
+      <td>0.052972</td>
+    </tr>
+    <tr>
+      <th>gitu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>teriak</th>
+      <td>0.038082</td>
+    </tr>
+    <tr>
+      <th>sanggup</th>
+      <td>0.055847</td>
+    </tr>
+    <tr>
+      <th>rp</th>
+      <td>0.023600</td>
+    </tr>
+    <tr>
+      <th>t</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dg</th>
+      <td>0.052077</td>
+    </tr>
+    <tr>
+      <th>sindir</th>
+      <td>0.032200</td>
+    </tr>
+    <tr>
+      <th>absen</th>
+      <td>0.022460</td>
+    </tr>
+    <tr>
+      <th>sidang</th>
+      <td>0.018425</td>
+    </tr>
+    <tr>
+      <th>pbb</th>
+      <td>0.006408</td>
+    </tr>
+    <tr>
+      <th>daya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>masyarakat</th>
+      <td>0.023890</td>
+    </tr>
+    <tr>
+      <th>ikan</th>
+      <td>0.011681</td>
+    </tr>
+    <tr>
+      <th>desa</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>klw</th>
+      <td>0.019456</td>
+    </tr>
+    <tr>
+      <th>anda</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dukung</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tolak</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tulis</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kuasa</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>duta</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>habibie</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>keluarga</th>
+      <td>0.049653</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sah</th>
+      <td>0.080630</td>
+    </tr>
+    <tr>
+      <th>tahun</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>gue</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>cawapres</th>
+      <td>0.038051</td>
+    </tr>
+    <tr>
+      <th>capres</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>human</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>rights</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>violations</th>
+      <td>0.026812</td>
+    </tr>
+    <tr>
+      <th>and</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>the</th>
+      <td>0.058492</td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td>0.063874</td>
+    </tr>
+    <tr>
+      <th>si</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>elu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>mentolo</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>napuk</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>cocot</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>nduwe</th>
+      <td>0.020031</td>
+    </tr>
+    <tr>
+      <th>cermin</th>
+      <td>0.012606</td>
+    </tr>
+    <tr>
+      <th>ta</th>
+      <td>0.059017</td>
+    </tr>
+    <tr>
+      <th>achmad</th>
+      <td>0.063595</td>
+    </tr>
+    <tr>
+      <th>nur</th>
+      <td>0.066905</td>
+    </tr>
+    <tr>
+      <th>hidayat</th>
+      <td>0.066351</td>
+    </tr>
+    <tr>
+      <th>kait</th>
+      <td>0.046112</td>
+    </tr>
+    <tr>
+      <th>lengser</th>
+      <td>0.024731</td>
+    </tr>
+    <tr>
+      <th>suharso</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>monoarfa</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ikn</th>
+      <td>0.036822</td>
+    </tr>
+    <tr>
+      <th>libat</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>butuh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>selesai</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>aku</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>daerah</th>
+      <td>0.015735</td>
+    </tr>
+    <tr>
+      <th>redam</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kris</th>
+      <td>0.051221</td>
+    </tr>
+    <tr>
+      <th>biro</th>
+      <td>0.084083</td>
+    </tr>
+    <tr>
+      <th>pers</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sekretariat</th>
+      <td>0.021555</td>
+    </tr>
+    <tr>
+      <th>iya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dluhuran</th>
+      <td>0.036745</td>
+    </tr>
+    <tr>
+      <th>jual</th>
+      <td>0.003342</td>
+    </tr>
+    <tr>
+      <th>utang</th>
+      <td>0.028558</td>
+    </tr>
+    <tr>
+      <th>bang</th>
+      <td>0.103464</td>
+    </tr>
+    <tr>
+      <th>thdap</th>
+      <td>0.044083</td>
+    </tr>
+    <tr>
+      <th>kalimantan</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>plakunya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bebas</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>juang</th>
+      <td>0.015747</td>
+    </tr>
+    <tr>
+      <th>tegak</th>
+      <td>0.008910</td>
+    </tr>
+    <tr>
+      <th>benar</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>spaya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jangn</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>suka</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>mengadudomba</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bangsa</th>
+      <td>0.002763</td>
+    </tr>
+    <tr>
+      <th>lupa</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>yaa</th>
+      <td>0.125569</td>
+    </tr>
+    <tr>
+      <th>emg</th>
+      <td>0.069132</td>
+    </tr>
+    <tr>
+      <th>hapus</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bagi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dprd</th>
+      <td>0.032567</td>
+    </tr>
+    <tr>
+      <th>cari</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>temen</th>
+      <td>0.021732</td>
+    </tr>
+    <tr>
+      <th>nyata</th>
+      <td>0.021359</td>
+    </tr>
+    <tr>
+      <th>pertalite</th>
+      <td>0.060325</td>
+    </tr>
+    <tr>
+      <th>spbu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>antri</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jam</th>
+      <td>0.024009</td>
+    </tr>
+    <tr>
+      <th>pom</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>mini</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ecer</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ribu</th>
+      <td>0.014029</td>
+    </tr>
+    <tr>
+      <th>liter</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ebong</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tolol</th>
+      <td>0.008812</td>
+    </tr>
+    <tr>
+      <th>borong</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>cilik</th>
+      <td>0.019307</td>
+    </tr>
+    <tr>
+      <th>buatin</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jembatan</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>maklumin</th>
+      <td>0.098889</td>
+    </tr>
+    <tr>
+      <th>nge</th>
+      <td>0.073329</td>
+    </tr>
+    <tr>
+      <th>prank</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bisa</th>
+      <td>0.003005</td>
+    </tr>
+    <tr>
+      <th>plonga</th>
+      <td>0.008330</td>
+    </tr>
+    <tr>
+      <th>plongo</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kagak</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>hari</th>
+      <td>0.141996</td>
+    </tr>
+    <tr>
+      <th>faktanohoax</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>peduli</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>thd</th>
+      <td>0.012838</td>
+    </tr>
+    <tr>
+      <th>layak</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>apresiasi</th>
+      <td>0.001005</td>
+    </tr>
+    <tr>
+      <th>sukamahi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ciawi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>barat</th>
+      <td>0.069012</td>
+    </tr>
+    <tr>
+      <th>kendali</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>banjir</th>
+      <td>0.018886</td>
+    </tr>
+    <tr>
+      <th>bersamajokowi</th>
+      <td>0.025254</td>
+    </tr>
+    <tr>
+      <th>indonesiamaju</th>
+      <td>0.000511</td>
+    </tr>
+    <tr>
+      <th>today</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>our</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>new</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>nadia</th>
+      <td>0.098429</td>
+    </tr>
+    <tr>
+      <th>burger</th>
+      <td>0.061036</td>
+    </tr>
+    <tr>
+      <th>presented</th>
+      <td>0.002929</td>
+    </tr>
+    <tr>
+      <th>her</th>
+      <td>0.016619</td>
+    </tr>
+    <tr>
+      <th>letters</th>
+      <td>0.124605</td>
+    </tr>
+    <tr>
+      <th>credence</th>
+      <td>0.011874</td>
+    </tr>
+    <tr>
+      <th>at</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>presidential</th>
+      <td>0.002047</td>
+    </tr>
+    <tr>
+      <th>palace</th>
+      <td>0.003604</td>
+    </tr>
+    <tr>
+      <th>she</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>officially</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>canada</th>
+      <td>0.046278</td>
+    </tr>
+    <tr>
+      <th>th</th>
+      <td>0.176589</td>
+    </tr>
+    <tr>
+      <th>canadaindonesia</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>plis</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>inpes</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>may</th>
+      <td>0.088751</td>
+    </tr>
+    <tr>
+      <th>kantry</th>
+      <td>0.015429</td>
+    </tr>
+    <tr>
+      <th>ples</th>
+      <td>0.022864</td>
+    </tr>
+    <tr>
+      <th>utangin</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>temu</th>
+      <td>0.005615</td>
+    </tr>
+    <tr>
+      <th>ktnya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kangen</th>
+      <td>0.011883</td>
+    </tr>
+    <tr>
+      <th>kt</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sj</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bohong</th>
+      <td>0.007466</td>
+    </tr>
+    <tr>
+      <th>biasa</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>budaya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>malu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ngak</th>
+      <td>0.146961</td>
+    </tr>
+    <tr>
+      <th>urus</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>buat</th>
+      <td>0.010080</td>
+    </tr>
+    <tr>
+      <th>baik</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>istano</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>hahahaha</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>trs</th>
+      <td>0.088177</td>
+    </tr>
+    <tr>
+      <th>teman</th>
+      <td>0.018696</td>
+    </tr>
+    <tr>
+      <th>partai</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kah</th>
+      <td>0.018434</td>
+    </tr>
+    <tr>
+      <th>target</th>
+      <td>0.021453</td>
+    </tr>
+    <tr>
+      <th>objektig</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>membangunnkri</th>
+      <td>0.083151</td>
+    </tr>
+    <tr>
+      <th>indonesiamembangun</th>
+      <td>0.045509</td>
+    </tr>
+    <tr>
+      <th>seremonial</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>useless</th>
+      <td>0.003131</td>
+    </tr>
+    <tr>
+      <th>yoh</th>
+      <td>0.024292</td>
+    </tr>
+    <tr>
+      <th>nda</th>
+      <td>0.003780</td>
+    </tr>
+    <tr>
+      <th>sen</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>assalamualaikum</th>
+      <td>0.041978</td>
+    </tr>
+    <tr>
+      <th>cinta</th>
+      <td>0.096383</td>
+    </tr>
+    <tr>
+      <th>nanya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kalu</th>
+      <td>0.016992</td>
+    </tr>
+    <tr>
+      <th>karyawan</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>lo</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>cek</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>wni</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>nasib</th>
+      <td>0.003815</td>
+    </tr>
+    <tr>
+      <th>diawasin</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>atuh</th>
+      <td>0.054863</td>
+    </tr>
+    <tr>
+      <th>gw</th>
+      <td>0.045107</td>
+    </tr>
+    <tr>
+      <th>akses</th>
+      <td>0.002418</td>
+    </tr>
+    <tr>
+      <th>ngedukun</th>
+      <td>0.033531</td>
+    </tr>
+    <tr>
+      <th>sample</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>medsos</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>barang</th>
+      <td>0.009792</td>
+    </tr>
+    <tr>
+      <th>langka</th>
+      <td>0.034219</td>
+    </tr>
+    <tr>
+      <th>ngaco</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>narasi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>pemimpinadalah</th>
+      <td>0.117653</td>
+    </tr>
+    <tr>
+      <th>bodoh</th>
+      <td>0.028334</td>
+    </tr>
+    <tr>
+      <th>laknat</th>
+      <td>0.027782</td>
+    </tr>
+    <tr>
+      <th>tegur</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>keliru</th>
+      <td>0.027143</td>
+    </tr>
+    <tr>
+      <th>pimpin</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>biang</th>
+      <td>0.151536</td>
+    </tr>
+    <tr>
+      <th>kerok</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>hancur</th>
+      <td>0.064792</td>
+    </tr>
+    <tr>
+      <th>pdhl</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>formula</th>
+      <td>0.013823</td>
+    </tr>
+    <tr>
+      <th>aje</th>
+      <td>0.020637</td>
+    </tr>
+    <tr>
+      <th>roboh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>entar</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>disalahin</th>
+      <td>0.062394</td>
+    </tr>
+    <tr>
+      <th>sy</th>
+      <td>0.011735</td>
+    </tr>
+    <tr>
+      <th>pesimis</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>balas</th>
+      <td>0.016418</td>
+    </tr>
+    <tr>
+      <th>budi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bener</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>angkot</th>
+      <td>0.041007</td>
+    </tr>
+    <tr>
+      <th>jaklingko</th>
+      <td>0.011968</td>
+    </tr>
+    <tr>
+      <th>hebat</th>
+      <td>0.028230</td>
+    </tr>
+    <tr>
+      <th>jiwa</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>program</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dahulu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kembang</th>
+      <td>0.026276</td>
+    </tr>
+    <tr>
+      <th>busway</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sutiyoso</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kjp</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ganjil</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>genap</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ahok</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jalan</th>
+      <td>0.028551</td>
+    </tr>
+    <tr>
+      <th>gubernur</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>asing</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>gambar</th>
+      <td>0.106273</td>
+    </tr>
+    <tr>
+      <th>photo</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ava</th>
+      <td>0.013627</td>
+    </tr>
+    <tr>
+      <th>mu</th>
+      <td>0.049971</td>
+    </tr>
+    <tr>
+      <th>atas</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>marak</th>
+      <td>0.060194</td>
+    </tr>
+    <tr>
+      <th>bocor</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>smarternotharder</th>
+      <td>0.000552</td>
+    </tr>
+    <tr>
+      <th>sedap</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>korea</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>squid</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>game</th>
+      <td>0.000518</td>
+    </tr>
+    <tr>
+      <th>ios</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>pagi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ricuh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bonyok</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ujung</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>pastiii</th>
+      <td>0.037107</td>
+    </tr>
+    <tr>
+      <th>jahat</th>
+      <td>0.044486</td>
+    </tr>
+    <tr>
+      <th>btw</th>
+      <td>0.086305</td>
+    </tr>
+    <tr>
+      <th>sambo</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sehat</th>
+      <td>0.013970</td>
+    </tr>
+    <tr>
+      <th>payah</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>prof</th>
+      <td>0.007562</td>
+    </tr>
+    <tr>
+      <th>create</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tni</th>
+      <td>0.001451</td>
+    </tr>
+    <tr>
+      <th>al</th>
+      <td>0.011960</td>
+    </tr>
+    <tr>
+      <th>lochh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>perwira</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>laut</th>
+      <td>0.008885</td>
+    </tr>
+    <tr>
+      <th>kasih</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>loh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kayak</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>krn</th>
+      <td>0.009331</td>
+    </tr>
+    <tr>
+      <th>bawah</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>banyak</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>nggak</th>
+      <td>0.006860</td>
+    </tr>
+    <tr>
+      <th>ngomong</th>
+      <td>0.016471</td>
+    </tr>
+    <tr>
+      <th>tembok</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bosen</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>minimal</th>
+      <td>0.065915</td>
+    </tr>
+    <tr>
+      <th>harap</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dapet</th>
+      <td>0.011845</td>
+    </tr>
+    <tr>
+      <th>kacau</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>balau</th>
+      <td>0.056384</td>
+    </tr>
+    <tr>
+      <th>korupsi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dah</th>
+      <td>0.056885</td>
+    </tr>
+    <tr>
+      <th>urusin</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>main</th>
+      <td>0.076275</td>
+    </tr>
+    <tr>
+      <th>peran</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>demokrasi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>lepas</th>
+      <td>0.071809</td>
+    </tr>
+    <tr>
+      <th>therightmanontherightplace</th>
+      <td>0.005815</td>
+    </tr>
+    <tr>
+      <th>opini</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>pribadi</th>
+      <td>0.030248</td>
+    </tr>
+    <tr>
+      <th>konstitusi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>uu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>wakil</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>paket</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sdh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sbg</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>wapres</th>
+      <td>0.029095</td>
+    </tr>
+    <tr>
+      <th>nyalon</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>lg</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kecuali</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>nik</th>
+      <td>0.037037</td>
+    </tr>
+    <tr>
+      <th>beda</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ijasah</th>
+      <td>0.008945</td>
+    </tr>
+    <tr>
+      <th>dll</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>hehehe</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>budidaya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dukoraharjo</th>
+      <td>0.052150</td>
+    </tr>
+    <tr>
+      <th>semangat</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tppjawatimur</th>
+      <td>0.001003</td>
+    </tr>
+    <tr>
+      <th>tppkabmalang</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tpp</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kepanjen</th>
+      <td>0.011826</td>
+    </tr>
+    <tr>
+      <th>sobat</th>
+      <td>0.018707</td>
+    </tr>
+    <tr>
+      <th>mari</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jokowimarufamin</th>
+      <td>0.044877</td>
+    </tr>
+    <tr>
+      <th>tweet</th>
+      <td>0.030417</td>
+    </tr>
+    <tr>
+      <th>bpp</th>
+      <td>0.004265</td>
+    </tr>
+    <tr>
+      <th>lapor</th>
+      <td>0.123803</td>
+    </tr>
+    <tr>
+      <th>dirut</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bumn</th>
+      <td>0.042210</td>
+    </tr>
+    <tr>
+      <th>aneh</th>
+      <td>0.000326</td>
+    </tr>
+    <tr>
+      <th>komisi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dpr</th>
+      <td>0.034686</td>
+    </tr>
+    <tr>
+      <th>substansi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>oneng</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>oot</th>
+      <td>0.026722</td>
+    </tr>
+    <tr>
+      <th>ym</th>
+      <td>0.052931</td>
+    </tr>
+    <tr>
+      <th>kepala</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>anggar</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sumber</th>
+      <td>0.003126</td>
+    </tr>
+    <tr>
+      <th>khas</th>
+      <td>0.051992</td>
+    </tr>
+    <tr>
+      <th>tani</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ternak</th>
+      <td>0.014990</td>
+    </tr>
+    <tr>
+      <th>tahan</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>pangan</th>
+      <td>0.052986</td>
+    </tr>
+    <tr>
+      <th>handal</th>
+      <td>0.053608</td>
+    </tr>
+    <tr>
+      <th>koperasi</th>
+      <td>0.030997</td>
+    </tr>
+    <tr>
+      <th>mosok</th>
+      <td>0.010710</td>
+    </tr>
+    <tr>
+      <th>mesti</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tar</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jg</th>
+      <td>0.007535</td>
+    </tr>
+    <tr>
+      <th>cuman</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ecapedeh</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>welcome</th>
+      <td>0.012201</td>
+    </tr>
+    <tr>
+      <th>me</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>rt</th>
+      <td>0.046887</td>
+    </tr>
+    <tr>
+      <th>terima</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>surat</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>delapan</th>
+      <td>0.038960</td>
+    </tr>
+    <tr>
+      <th>sahabat</th>
+      <td>0.003314</td>
+    </tr>
+    <tr>
+      <th>istana</th>
+      <td>0.015350</td>
+    </tr>
+    <tr>
+      <th>merdeka</th>
+      <td>0.059598</td>
+    </tr>
+    <tr>
+      <th>asal</th>
+      <td>0.004929</td>
+    </tr>
+    <tr>
+      <th>kanada</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>thailand</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>austria</th>
+      <td>0.065015</td>
+    </tr>
+    <tr>
+      <th>singapura</th>
+      <td>0.027896</td>
+    </tr>
+    <tr>
+      <th>belgia</th>
+      <td>0.048680</td>
+    </tr>
+    <tr>
+      <th>tanzania</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>finlandia</th>
+      <td>0.019504</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>0.109013</td>
+    </tr>
+    <tr>
+      <th>kyk</th>
+      <td>0.048385</td>
+    </tr>
+    <tr>
+      <th>jgn</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kaburrr</th>
+      <td>0.007614</td>
+    </tr>
+    <tr>
+      <th>didatengin</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>asem</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kek</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jokowow</th>
+      <td>0.010776</td>
+    </tr>
+    <tr>
+      <th>eyang</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>harto</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>mantan</th>
+      <td>0.021857</td>
+    </tr>
+    <tr>
+      <th>model</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jiancuuuuuuuuuuuk</th>
+      <td>0.001592</td>
+    </tr>
+    <tr>
+      <th>priode</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>hitung</th>
+      <td>0.007361</td>
+    </tr>
+    <tr>
+      <th>laksana</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>akibat</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sasar</th>
+      <td>0.012024</td>
+    </tr>
+    <tr>
+      <th>mulu</th>
+      <td>0.041244</td>
+    </tr>
+    <tr>
+      <th>gin</th>
+      <td>0.034872</td>
+    </tr>
+    <tr>
+      <th>mending</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>diturunin</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ngoceh</th>
+      <td>0.001225</td>
+    </tr>
+    <tr>
+      <th>nungging</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>upil</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>yaaaa</th>
+      <td>0.008839</td>
+    </tr>
+    <tr>
+      <th>gtu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>lu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>gas</th>
+      <td>0.100624</td>
+    </tr>
+    <tr>
+      <th>skrg</th>
+      <td>0.128025</td>
+    </tr>
+    <tr>
+      <th>mggu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>respons</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bssn</th>
+      <td>0.161352</td>
+    </tr>
+    <tr>
+      <th>risiko</th>
+      <td>0.010101</td>
+    </tr>
+    <tr>
+      <th>bengkak</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>penyesuian</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bulan</th>
+      <td>0.019972</td>
+    </tr>
+    <tr>
+      <th>kalo</th>
+      <td>0.034361</td>
+    </tr>
+    <tr>
+      <th>ngaconya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>kualiats</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>pns</th>
+      <td>0.004313</td>
+    </tr>
+    <tr>
+      <th>mati</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>emang</th>
+      <td>0.053622</td>
+    </tr>
+    <tr>
+      <th>pikirin</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>mantu</th>
+      <td>0.005796</td>
+    </tr>
+    <tr>
+      <th>ngapain</th>
+      <td>0.075051</td>
+    </tr>
+    <tr>
+      <th>pusing</th>
+      <td>0.052322</td>
+    </tr>
+    <tr>
+      <th>peluang</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sosok</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>tekan</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sengaja</th>
+      <td>0.084831</td>
+    </tr>
+    <tr>
+      <th>murni</th>
+      <td>0.025978</td>
+    </tr>
+    <tr>
+      <th>rancang</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>terus</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>rubah</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>doang</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>stadiun</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>bmw</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>leta</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>batu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>p</th>
+      <td>0.092646</td>
+    </tr>
+    <tr>
+      <th>rename</th>
+      <td>0.028306</td>
+    </tr>
+    <tr>
+      <th>mjd</th>
+      <td>0.043829</td>
+    </tr>
+    <tr>
+      <th>culas</th>
+      <td>0.049176</td>
+    </tr>
+    <tr>
+      <th>sifat</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>buka</th>
+      <td>0.046791</td>
+    </tr>
+    <tr>
+      <th>tdk</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>valid</th>
+      <td>0.050024</td>
+    </tr>
+    <tr>
+      <th>sbenarnya</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>rusak</th>
+      <td>0.060744</td>
+    </tr>
+    <tr>
+      <th>kondusivitas</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dngan</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>lempar</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ancam</th>
+      <td>0.008643</td>
+    </tr>
+    <tr>
+      <th>palsu</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>dng</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>politis</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>haha</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>milih</th>
+      <td>0.026545</td>
+    </tr>
+    <tr>
+      <th>ato</th>
+      <td>0.088731</td>
+    </tr>
+    <tr>
+      <th>tpi</th>
+      <td>0.019299</td>
+    </tr>
+    <tr>
+      <th>negri</th>
+      <td>0.026933</td>
+    </tr>
+    <tr>
+      <th>pduli</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>repot</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>aegala</th>
+      <td>0.031002</td>
+    </tr>
+    <tr>
+      <th>masalah</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ahli</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>prestasi</th>
+      <td>0.135201</td>
+    </tr>
+    <tr>
+      <th>survey</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>abal</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>sebut</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>mayoritas</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>senyum</th>
+      <td>0.024422</td>
+    </tr>
+    <tr>
+      <th>bangga</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>menang</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>oposisi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>santai</th>
+      <td>0.033193</td>
+    </tr>
+    <tr>
+      <th>nyanyi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>happybirthday</th>
+      <td>0.049176</td>
+    </tr>
+    <tr>
+      <th>warga</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>luar</th>
+      <td>0.080659</td>
+    </tr>
+    <tr>
+      <th>is</th>
+      <td>0.068999</td>
+    </tr>
+    <tr>
+      <th>committed</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>resolving</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>government</th>
+      <td>0.142175</td>
+    </tr>
+    <tr>
+      <th>will</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>prioritize</th>
+      <td>0.001058</td>
+    </tr>
+    <tr>
+      <th>principle</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>justice</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>for</th>
+      <td>0.002673</td>
+    </tr>
+    <tr>
+      <th>victims</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>perpetrators</th>
+      <td>0.029674</td>
+    </tr>
+    <tr>
+      <th>i</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>really</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>agree</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>westpapuan</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>telek</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>indo</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>nikmat</th>
+      <td>0.001091</td>
+    </tr>
+    <tr>
+      <th>gelintir</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>talu</th>
+      <td>0.005779</td>
+    </tr>
+    <tr>
+      <th>jauhhh</th>
+      <td>0.040543</td>
+    </tr>
+    <tr>
+      <th>gap</th>
+      <td>0.028624</td>
+    </tr>
+    <tr>
+      <th>miskin</th>
+      <td>0.094019</td>
+    </tr>
+    <tr>
+      <th>tiada</th>
+      <td>0.135578</td>
+    </tr>
+    <tr>
+      <th>omong</th>
+      <td>0.008377</td>
+    </tr>
+    <tr>
+      <th>kosong</th>
+      <td>0.003872</td>
+    </tr>
+    <tr>
+      <th>citra</th>
+      <td>0.004543</td>
+    </tr>
+    <tr>
+      <th>kasihan</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>prabowo</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>rela</th>
+      <td>0.012467</td>
+    </tr>
+    <tr>
+      <th>puji</th>
+      <td>0.031185</td>
+    </tr>
+    <tr>
+      <th>muji</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>jilat</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>pssi</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>pantes</th>
+      <td>0.003832</td>
+    </tr>
+    <tr>
+      <th>suram</th>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-98611e49-1b9e-45d3-b7b3-5b9a6329517d')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-98611e49-1b9e-45d3-b7b3-5b9a6329517d button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-98611e49-1b9e-45d3-b7b3-5b9a6329517d');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1748,7 +4291,7 @@ Length: 603, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fb9876e0d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fdd24e8de10&gt;
 </pre></div>
 </div>
 <img alt="_images/notebooks_35_1.png" src="_images/notebooks_35_1.png" />
@@ -1765,13 +4308,14 @@ Length: 603, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;jokowi&#39;, &#39;nya&#39;, &#39;negeri&#39;, &#39;kaya&#39;, &#39;periode&#39;, &#39;tuh&#39;, &#39;tuju&#39;, &#39;paham&#39;,
-       &#39;hilang&#39;, &#39;turun&#39;, &#39;dg&#39;, &#39;sindir&#39;, &#39;absen&#39;, &#39;kuasa&#39;, &#39;c&#39;, &#39;jam&#39;,
-       &#39;jembatan&#39;, &#39;plonga&#39;, &#39;hari&#39;, &#39;she&#39;, &#39;officially&#39;, &#39;ngak&#39;, &#39;trs&#39;,
-       &#39;cinta&#39;, &#39;wni&#39;, &#39;pemimpinadalah&#39;, &#39;jalan&#39;, &#39;bocor&#39;, &#39;kasih&#39;, &#39;kayak&#39;,
-       &#39;opini&#39;, &#39;kecuali&#39;, &#39;nik&#39;, &#39;semangat&#39;, &#39;tppjawatimur&#39;, &#39;dirut&#39;,
-       &#39;komisi&#39;, &#39;ternak&#39;, &#39;handal&#39;, &#39;mantan&#39;, &#39;model&#39;, &#39;gin&#39;, &#39;sosok&#39;,
-       &#39;valid&#39;, &#39;dngan&#39;, &#39;tpi&#39;, &#39;i&#39;, &#39;westpapuan&#39;, &#39;pssi&#39;, &#39;pantes&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;jokowi&#39;, &#39;surplus&#39;, &#39;bendung&#39;, &#39;of&#39;, &#39;kompeten&#39;, &#39;deh&#39;, &#39;klemer&#39;,
+       &#39;gimana&#39;, &#39;sih&#39;, &#39;daya&#39;, &#39;desa&#39;, &#39;si&#39;, &#39;cocot&#39;, &#39;dluhuran&#39;, &#39;hapus&#39;,
+       &#39;buatin&#39;, &#39;bisa&#39;, &#39;presidential&#39;, &#39;canadaindonesia&#39;, &#39;plis&#39;, &#39;inpes&#39;,
+       &#39;malu&#39;, &#39;nanya&#39;, &#39;lo&#39;, &#39;ngedukun&#39;, &#39;sample&#39;, &#39;langka&#39;, &#39;aje&#39;, &#39;entar&#39;,
+       &#39;pesimis&#39;, &#39;hebat&#39;, &#39;asing&#39;, &#39;ricuh&#39;, &#39;balau&#39;,
+       &#39;therightmanontherightplace&#39;, &#39;tpp&#39;, &#39;sobat&#39;, &#39;oot&#39;, &#39;sumber&#39;,
+       &#39;ecapedeh&#39;, &#39;tanzania&#39;, &#39;kek&#39;, &#39;model&#39;, &#39;mulu&#39;, &#39;doang&#39;, &#39;pduli&#39;,
+       &#39;survey&#39;, &#39;justice&#39;, &#39;telek&#39;, &#39;jilat&#39;],
       dtype=&#39;object&#39;)
 </pre></div>
 </div>
@@ -1779,8 +4323,10 @@ Length: 603, dtype: float64
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="prediksi-jenis-sentimen-menggunakan-metode-klasifikasi-knn">
-<h1><strong>Prediksi jenis sentimen menggunakan metode klasifikasi KNN</strong><a class="headerlink" href="#prediksi-jenis-sentimen-menggunakan-metode-klasifikasi-knn" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="klasifikasi-sentimen-menggunakan-metode-knn">
+<h1><strong>Klasifikasi sentimen menggunakan metode [KNN]</strong><a class="headerlink" href="#klasifikasi-sentimen-menggunakan-metode-knn" title="Permalink to this headline">#</a></h1>
+<p>k-nearest neighbor (KNN) adalah algoritma pembelajaran mesin terawasi yang sederhana dan mudah diterapkan yang dapat digunakan untuk menyelesaikan masalah klasifikasi dan regresi. Berhenti sebentar! Mari kita membongkar itu.</p>
+<p>pembelajaran mesin terawasi sendiri merupakan algoritma yang bergantung pada data input berlabel untuk mempelajari fungsi yang menghasilkan output yang sesuai ketika diberikan data baru yang tidak berlabel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
@@ -2076,6 +4622,7 @@ Length: 603, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span><span class="n">precision_score</span>
+
 <span class="n">list_akurasi</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_y_pred</span><span class="p">)):</span>
   <span class="c1"># print(list_pred[i])</span>
@@ -2158,7 +4705,7 @@ Length: 603, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-597328c1-b5a7-4ed1-ab06-7be9bbf1649b">
+  <div id="df-bc8c1ee8-e1a4-4f68-9ffc-17a61cfa4596">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -2456,7 +5003,7 @@ Length: 603, dtype: float64
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-597328c1-b5a7-4ed1-ab06-7be9bbf1649b')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-bc8c1ee8-e1a4-4f68-9ffc-17a61cfa4596')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -2507,12 +5054,12 @@ Length: 603, dtype: float64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-597328c1-b5a7-4ed1-ab06-7be9bbf1649b button.colab-df-convert');
+          document.querySelector('#df-bc8c1ee8-e1a4-4f68-9ffc-17a61cfa4596 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-597328c1-b5a7-4ed1-ab06-7be9bbf1649b');
+          const element = document.querySelector('#df-bc8c1ee8-e1a4-4f68-9ffc-17a61cfa4596');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -2543,13 +5090,996 @@ Length: 603, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fb9844c8890&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fdd226a1b10&gt;
 </pre></div>
 </div>
 <img alt="_images/notebooks_44_1.png" src="_images/notebooks_44_1.png" />
 </div>
 </div>
 </section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="clustering-sentimen-menggunakan-metode-kmeans">
+<h1><strong>Clustering sentimen menggunakan metode [KMEANS]</strong><a class="headerlink" href="#clustering-sentimen-menggunakan-metode-kmeans" title="Permalink to this headline">#</a></h1>
+<p>Clustering, secara umum, adalah metode “belajar tanpa pengawasan”. Itu berarti kita tidak memiliki variabel target.</p>
+<p>K-means clustering merupakan yang paling umum digunakan untuk mempartisi kumpulan data yang diberikan ke dalam kumpulan k grup (yaitu k cluster ), di mana k mewakili jumlah grup yang ditentukan sebelumnya oleh analis .</p>
+<section id="reduksi-dimensi-menggunakan-metode-principal-component-analysis-pca">
+<h2>Reduksi dimensi menggunakan metode [Principal Component Analysis(PCA)]<a class="headerlink" href="#reduksi-dimensi-menggunakan-metode-principal-component-analysis-pca" title="Permalink to this headline">#</a></h2>
+<p>Principal Component Analysis(PCA) merupakan metode yang berfungsi untuk mengubah data berdimensi tinggi menjadi data berdimensi rendah dengan memilih fitur terpenting yang menangkap informasi maksimum tentang kumpulan data. Fitur dipilih berdasarkan varians yang ditimbulkannya dalam output. Fitur yang menyebabkan varians tertinggi adalah komponen utama pertama. Fitur yang bertanggung jawab untuk varian tertinggi kedua dianggap sebagai komponen utama kedua, dan seterusnya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="n">df_fcluster</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="s1">&#39;Tweet&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># df_fcluster</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df_fcluster</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_fcluster</span><span class="p">)</span>
+<span class="n">df_fclusters</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_fcluster</span><span class="p">)</span>
+<span class="n">df_fclusters</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-96ba9e11-28f5-4fbc-8b04-b1908bd40089">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.554472</td>
+      <td>-0.012230</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.076482</td>
+      <td>-0.653832</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.101973</td>
+      <td>-0.528021</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.580074</td>
+      <td>-1.688966</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.515446</td>
+      <td>0.075380</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.580334</td>
+      <td>0.196061</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.000728</td>
+      <td>1.034502</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.572323</td>
+      <td>0.088427</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-0.671770</td>
+      <td>0.037459</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.522293</td>
+      <td>0.076825</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-0.060015</td>
+      <td>-0.595920</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-0.645628</td>
+      <td>0.105783</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-0.545132</td>
+      <td>0.106208</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-0.190849</td>
+      <td>-0.362791</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-0.756320</td>
+      <td>0.218130</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.327185</td>
+      <td>-0.540147</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-0.920006</td>
+      <td>-0.155786</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>-0.762228</td>
+      <td>0.044393</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>-0.509216</td>
+      <td>0.120557</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>-0.563366</td>
+      <td>0.064052</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>-0.146041</td>
+      <td>-0.445237</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>-0.246458</td>
+      <td>0.125422</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>-0.567696</td>
+      <td>0.160849</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0.589435</td>
+      <td>-0.552904</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>-1.417295</td>
+      <td>4.361206</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-0.607731</td>
+      <td>0.488638</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1.126560</td>
+      <td>0.092363</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0.166825</td>
+      <td>0.851745</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>-0.066712</td>
+      <td>-0.547493</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>-0.536548</td>
+      <td>0.079890</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>0.005777</td>
+      <td>-0.878126</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>-0.207683</td>
+      <td>-0.432906</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>-0.529324</td>
+      <td>0.078328</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>-0.466845</td>
+      <td>0.040398</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>-0.469186</td>
+      <td>0.111296</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>-0.508776</td>
+      <td>0.073987</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>-0.487522</td>
+      <td>0.059469</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>-0.523745</td>
+      <td>0.079121</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>-0.543971</td>
+      <td>0.081516</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>-0.532316</td>
+      <td>0.069756</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>-0.672614</td>
+      <td>0.289529</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>-0.525465</td>
+      <td>0.170843</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>-0.515446</td>
+      <td>0.075380</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>-0.176568</td>
+      <td>-0.128486</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>-0.548860</td>
+      <td>0.299670</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>0.287078</td>
+      <td>0.638793</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>-0.123090</td>
+      <td>-0.488759</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>3.948589</td>
+      <td>-0.575514</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>-0.170837</td>
+      <td>-0.520362</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>-0.123090</td>
+      <td>-0.488759</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>-0.576119</td>
+      <td>0.139414</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>2.577170</td>
+      <td>-1.026386</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>1.332011</td>
+      <td>0.960215</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>0.096900</td>
+      <td>0.313658</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>-0.584664</td>
+      <td>0.185625</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>0.046872</td>
+      <td>0.810864</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>-0.552519</td>
+      <td>0.037942</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>-0.230731</td>
+      <td>-0.954626</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>0.067853</td>
+      <td>0.379184</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>5.019578</td>
+      <td>2.238387</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>-0.537497</td>
+      <td>0.085755</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>-0.609176</td>
+      <td>0.029125</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>0.044090</td>
+      <td>1.277472</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>0.377702</td>
+      <td>-0.964008</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>-0.515446</td>
+      <td>0.075380</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>-0.170837</td>
+      <td>-0.520362</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>-0.633004</td>
+      <td>0.199005</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>0.352142</td>
+      <td>-1.164257</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>-0.028283</td>
+      <td>-0.057045</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>0.315632</td>
+      <td>0.473316</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>0.479410</td>
+      <td>-1.241171</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>1.082002</td>
+      <td>-1.404614</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>2.172441</td>
+      <td>1.282757</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>0.720774</td>
+      <td>-1.504005</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>-0.460752</td>
+      <td>0.153672</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>1.169761</td>
+      <td>0.946077</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>-0.437589</td>
+      <td>-1.725439</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>0.582001</td>
+      <td>0.986880</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>-0.529324</td>
+      <td>0.078328</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>-0.149591</td>
+      <td>-0.573118</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>-0.191387</td>
+      <td>-0.317765</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-96ba9e11-28f5-4fbc-8b04-b1908bd40089')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-96ba9e11-28f5-4fbc-8b04-b1908bd40089 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-96ba9e11-28f5-4fbc-8b04-b1908bd40089');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="hasil-clustering">
+<h2>Hasil Clustering<a class="headerlink" href="#hasil-clustering" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="n">kmeans</span> <span class="o">=</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">kmeans</span><span class="o">=</span><span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_fcluster</span><span class="p">)</span>
+<span class="n">prediksi</span><span class="o">=</span><span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df_fcluster</span><span class="p">)</span>
+<span class="n">centroids</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span>
+
+<span class="n">dfprediksi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">prediksi</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Cluster&quot;</span><span class="p">])</span>
+<span class="c1"># dfcentroids = pd.DataFrame(centroids)</span>
+<span class="c1"># hasil = dfcentroids.merge(dfprediksi,left_index=True, right_on=&#39;Cluster&#39;)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">dfprediksi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-00df9474-4420-46d7-a121-bf0be79a60a7">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-00df9474-4420-46d7-a121-bf0be79a60a7')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-00df9474-4420-46d7-a121-bf0be79a60a7 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-00df9474-4420-46d7-a121-bf0be79a60a7');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
 </section>
 </section>
 
