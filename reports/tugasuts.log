@@ -32,14 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-%%capture
-!pip install scrapy
-!pip install pandas
-!pip install scikit-learn
-!pip install --user -U nltk
-
-!pip install scipy
-!pip install networkx
-
+['# import StemmerFactory class', 'from Sastrawi.Stemmer.StemmerFactory import StemmerFactory', '', '# create stemmer', 'factory = StemmerFactory()']
+...
+['  raise KeyboardInterrupt', 'except KeyboardInterrupt:', "  print(df['Tweet'][2])", 'else :', "  print(df['Tweet'][2])"]
 -------------------
 
