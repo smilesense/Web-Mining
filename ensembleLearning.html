@@ -1,0 +1,2012 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tugas Melakukan Klasifikasi Menggunakan Metode Ensemble Learning &#8212; Bihubbil Choir Aidifta (190411100121)</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tugas Melakukan Topic Modeling" href="tugas_topicModeling.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/190411100121.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Bihubbil Choir Aidifta (190411100121)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Tentang Buku
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tugas
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tugas1.html">
+   Tugas Mengambil (Crawling Data) Tugas Akhir (pta.trunojoyo.ac.id)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   <strong>
+    Tugas Web Mining
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tugasuts.html">
+   <strong>
+    Tugas UTS
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tugas_topicModeling.html">
+   <strong>
+    Tugas Melakukan Topic Modeling
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   <strong>
+    Tugas Melakukan Klasifikasi Menggunakan Metode Ensemble Learning
+   </strong>
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/smilesense/webmining/blob/master/_sources/ensembleLearning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/smilesense/webmining"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/smilesense/webmining/issues/new?title=Issue%20on%20page%20%2FensembleLearning.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/ensembleLearning.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#web-mining">
+   Web Mining
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensemble-learning">
+   Ensemble Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#twitter">
+   Twitter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instalasi-library">
+   <strong>
+    Instalasi Library
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#snscrape">
+   Snscrape
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sastrawi">
+   Sastrawi
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scikit-learn">
+   Scikit-learn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#menulis-script-konfigurasi-snscrape">
+   <strong>
+    Menulis Script Konfigurasi Snscrape
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#melakukan-pengecekan-berkas-hasil-scrape-lama">
+     Melakukan Pengecekan Berkas Hasil Scrape Lama
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-hasil">
+   <strong>
+    Import Hasil
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-data-tweets">
+   <strong>
+    Preprocessing Data Tweets
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-folding">
+     Case Folding
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stopwords-removal">
+     Stopwords Removal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stemming">
+     Stemming
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tokenisasi">
+     Tokenisasi
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hasil-preprocessing">
+     Hasil Preprocessing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#term-frequency-tf">
+   <strong>
+    Term Frequency (TF)
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#term-frequency-keseluruhan">
+     Term Frequency Keseluruhan
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#term-frequency-tiap-tweet">
+     Term Frequency Tiap Tweet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melakukan-training">
+   Melakukan Training
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bagging-classifier">
+   <strong>
+    Bagging CLassifier
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forest">
+   <strong>
+    Random Forest
+   </strong>
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tugas Melakukan Klasifikasi Menggunakan Metode Ensemble Learning</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#web-mining">
+   Web Mining
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensemble-learning">
+   Ensemble Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#twitter">
+   Twitter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instalasi-library">
+   <strong>
+    Instalasi Library
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#snscrape">
+   Snscrape
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sastrawi">
+   Sastrawi
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scikit-learn">
+   Scikit-learn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#menulis-script-konfigurasi-snscrape">
+   <strong>
+    Menulis Script Konfigurasi Snscrape
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#melakukan-pengecekan-berkas-hasil-scrape-lama">
+     Melakukan Pengecekan Berkas Hasil Scrape Lama
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-hasil">
+   <strong>
+    Import Hasil
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-data-tweets">
+   <strong>
+    Preprocessing Data Tweets
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case-folding">
+     Case Folding
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stopwords-removal">
+     Stopwords Removal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stemming">
+     Stemming
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tokenisasi">
+     Tokenisasi
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hasil-preprocessing">
+     Hasil Preprocessing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#term-frequency-tf">
+   <strong>
+    Term Frequency (TF)
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#term-frequency-keseluruhan">
+     Term Frequency Keseluruhan
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#term-frequency-tiap-tweet">
+     Term Frequency Tiap Tweet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melakukan-training">
+   Melakukan Training
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bagging-classifier">
+   <strong>
+    Bagging CLassifier
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forest">
+   <strong>
+    Random Forest
+   </strong>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-melakukan-klasifikasi-menggunakan-metode-ensemble-learning">
+<h1><strong>Tugas Melakukan Klasifikasi Menggunakan Metode Ensemble Learning</strong><a class="headerlink" href="#tugas-melakukan-klasifikasi-menggunakan-metode-ensemble-learning" title="Permalink to this headline">#</a></h1>
+<p>Nama : Bihubbil Choir Aidifta<p>
+NIM : 190411100121</p>
+<section id="web-mining">
+<h2>Web Mining<a class="headerlink" href="#web-mining" title="Permalink to this headline">#</a></h2>
+<p>Web Mining adalah proses teknik Data Mining untuk secara otomatis menemukan dan mengekstrak informasi dari suatu halaman Web. Tujuan utama penambangan web adalah menemukan informasi yang berguna.</p>
+<p>Penambangan web membantu meningkatkan kekuatan mesin pencari web dengan mengklasifikasikan dokumen web dan mengidentifikasi halaman web.</p>
+</section>
+<hr class="docutils" />
+<section id="ensemble-learning">
+<h2>Ensemble Learning<a class="headerlink" href="#ensemble-learning" title="Permalink to this headline">#</a></h2>
+<p>Ensemble Learning adalah proses di mana beberapa model, seperti pengklasifikasi atau ahli, secara strategis dihasilkan dan digabungkan untuk memecahkan kecerdasan komputasi tertentu.masalah. Ensemble Learning utamanya digunakan untuk meningkatkan (klasifikasi, prediksi, perkiraan fungsi, dll.) kinerja model, atau mengurangi kemungkinan pemilihan model yang buruk.</p>
+</section>
+<hr class="docutils" />
+<section id="twitter">
+<h2>Twitter<a class="headerlink" href="#twitter" title="Permalink to this headline">#</a></h2>
+<p>Twitter adalah situs berita dan jejaring sosial online tempat orang berkomunikasi dalam pesan singkat yang disebut tweet. Tweeting adalah memposting pesan singkat untuk siapa saja yang mengikuti kita di Twitter, dengan harapan kata-kata kita dapat bermanfaat dan menarik bagi orang lain.</p>
+</section>
+<hr class="docutils" />
+<section id="instalasi-library">
+<h2><strong>Instalasi Library</strong><a class="headerlink" href="#instalasi-library" title="Permalink to this headline">#</a></h2>
+<p>Pada tahap ini dilakukan instalasi library-library yang nantinya dibutuhkan untuk menjalankan program, berikut adalah library yang dibutuhkan :</p>
+<hr class="docutils" />
+<p>Snscrape merupakan perpustakaan / library sumber terbuka (open source) yang ditulis dengan bahasa pemrograman python dan berguna untuk melakukan scraping atau ekstraksi dari jejaring sosial. Pada program ini kita akan menggunakan Snscrape untuk mengambil/mengekstrak data Tweets dari Twitter.</p>
+<p>Pandas merupakan perpustakaan / library sumber terbuka (Open Source) yang ditulis dengan bahasa pemrograman python dan berguna untuk melakukan analisis dan manipulasi data, khususnya untuk memanipulasi tabel numerik dan deret waktu.
+Pada program ini kita akan memanfaatkan Pandas DataFrame untuk menempatkan data hasil crawling.</p>
+<p>Sastrawi merupakan perpustakaan / library sumber terbuka yang ditulis dengan bahasa pemrograman python dan berguna untuk melakukan pengurangan kata-kata yang ter- infleksi dalam bahasa Indonesia ke bentuk baku-nya atau sesuai dengan standar kamus.</p>
+<p>Scikit-learn adalah library machine learning open source  untuk bahasa pemrograman Python. Ini fitur berbagai klasifikasi, regresi, algoritma pengelompokan, dan alat yang efisien untuk data mining dan analisis data. Ini dibangun di atas NumPy, SciPy, dan Matplotlib.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+!pip install snscrape
+!pip install pandas
+!pip install Sastrawi
+!pip install scikit-learn
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="snscrape">
+<h2>Snscrape<a class="headerlink" href="#snscrape" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="pandas">
+<h2>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="sastrawi">
+<h2>Sastrawi<a class="headerlink" href="#sastrawi" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="scikit-learn">
+<h2>Scikit-learn<a class="headerlink" href="#scikit-learn" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="menulis-script-konfigurasi-snscrape">
+<h2><strong>Menulis Script Konfigurasi Snscrape</strong><a class="headerlink" href="#menulis-script-konfigurasi-snscrape" title="Permalink to this headline">#</a></h2>
+<p>Pada tahap ini akan dibuat script kofigurasi Snscrape, script ini sendiri berupa modul yang berisi fungsi-fungsi untuk melakukan crawling dan scraping data tweet yang berada pada Twitter.<p>
+Berikut adalah penjelasan singkat mengenai script tersebut.</p>
+<hr class="docutils" />
+<br>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">search_query</span> <span class="o">=</span> <span class="s2">&quot;Jokowi&quot;</span>
+<span class="n">jumlah_tweets</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">tweets</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Variable tersebut merupakan variable yang berguna untuk mendefinisikan “search query” yang akan digunakan untuk mencari topik spesifik di twitter, “jumlah tweet” yang nantinya akan diambil, serta sebuah wadah berupa “list” yang nantinya akan digunakan untuk menyimpan data hasil scrape.</p>
+<hr class="docutils" />
+<br>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">sntwitter</span><span class="o">.</span><span class="n">TwitterSearchScraper</span><span class="p">(</span><span class="n">search_query</span><span class="p">)</span><span class="o">.</span><span class="n">get_items</span><span class="p">():</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span> <span class="o">==</span> <span class="n">jumlah_tweets</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tweets</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">tweet</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">tweet</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">tweet</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Loop ini berfungsi untuk mengambil tiap data tweet yang berhasil diambil dari twitter berdasarkan query yang telah kita definisikan sebelumnya. Pada loop tersebut terdapat pengecekan kondisi yang akan mengecek jumlah tweet yang berhasil diambil, selama loop ini belum mencapai batas jumlah tweet yang kita tentukan sebelumnya, maka loop ini akan terus melakukan penambahan data tweet ke wadah(list) yang telah dibuat sebelumnya.</p>
+<hr class="docutils" />
+<br>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tweets</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="s1">&#39;Tweet&#39;</span><span class="p">,</span> <span class="s1">&#39;Label&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Variable diatas berfungsi untuk mendefinisikan data tweet yang sebelumnya telah ditempatkan di wadah(list), dalam bentuk Pandas Dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">snscrape.modules.twitter</span> <span class="k">as</span> <span class="nn">sntwitter</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># from google.colab import data_table</span>
+<span class="c1"># data_table.enable_dataframe_formatter()</span>
+
+<span class="n">search_query</span> <span class="o">=</span> <span class="s2">&quot;Jokowi&quot;</span>
+<span class="n">jumlah_tweets</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">tweets</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">sntwitter</span><span class="o">.</span><span class="n">TwitterSearchScraper</span><span class="p">(</span><span class="n">search_query</span><span class="p">)</span><span class="o">.</span><span class="n">get_items</span><span class="p">():</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span> <span class="o">==</span> <span class="n">jumlah_tweets</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tweets</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">tweet</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">tweet</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">tweet</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">])</span>
+        
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tweets</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="s1">&#39;Tweet&#39;</span><span class="p">,</span> <span class="s1">&#39;Label&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date           User  \
+0  2022-11-08 16:42:39+00:00     Cinere_007   
+1  2022-11-08 16:42:31+00:00      MatJohar3   
+2  2022-11-08 16:42:09+00:00     udhinjogja   
+3  2022-11-08 16:42:04+00:00  Paijo14565029   
+4  2022-11-08 16:41:58+00:00          doirx   
+..                       ...            ...   
+95 2022-11-08 16:29:09+00:00       PikoloXY   
+96 2022-11-08 16:28:45+00:00    MIntegritas   
+97 2022-11-08 16:28:29+00:00       PikoloXY   
+98 2022-11-08 16:28:16+00:00  ali_aliachmad   
+99 2022-11-08 16:28:03+00:00       VIVAcoid   
+
+                                                Tweet Label  
+0   Rektor UGM klarifikasi ijasah Pak Jokowi\nhttp...  None  
+1   @MARQUEZ__93 @PDI_Perjuangan @Gerindra @jokowi...  None  
+2   @keuangannews_id Era gusdur saja sbg bpk demok...  None  
+3   @CNNIndonesia Mo dukung mo gak kek...emang yan...  None  
+4   @Minietweets_ @jokowi Sudah sejak 1930 Esemka ...  None  
+..                                                ...   ...  
+95  &quot;Sudah, itu yang sudah pasti 17,&quot; ungkap Presi...  None  
+96  Presiden Joko Widodo atau Jokowi dalam beberap...  None  
+97  Dalam kesempatan tsb, Presiden Jokowi juga men...  None  
+98  @yo2thok @jokowi @DPR_RI Polri di bawah Menkumham  None  
+99  Wapres Tunjukkan Upaya Jokowi untuk Damaikan R...  None  
+
+[100 rows x 4 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="melakukan-pengecekan-berkas-hasil-scrape-lama">
+<h3>Melakukan Pengecekan Berkas Hasil Scrape Lama<a class="headerlink" href="#melakukan-pengecekan-berkas-hasil-scrape-lama" title="Permalink to this headline">#</a></h3>
+<p>Karena setelah melakukan scraping data tweet kita perlu memberikan label secara manual, maka untuk menghindari berkas lama tertimpa oleh berkas baru, disini kita akan melakukan pengecekan berkas hasil scrape lama, apakah ada pada direktori atau tidak. Jika berkas hasil scrape lama tidak ditemukan pada direktori, maka hasil scrape sebelumnya (yang ada pada Pandas Dataframe) akan diespor menjadi berkas csv.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+import os
+!wget https://raw.githubusercontent.com/smilesense/datasets/master/ppw/19_121_tweets_labeled.csv -O 19_121_tweets_labeled.csv
+
+
+output_stream = os.popen(&#39;cat 19_121_tweets_labeled.csv&#39;)
+res = output_stream.read()
+if res == &#39;&#39;:
+  df.to_csv(&#39;19_121_tweets_labeled.csv&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="import-hasil">
+<h2><strong>Import Hasil</strong><a class="headerlink" href="#import-hasil" title="Permalink to this headline">#</a></h2>
+<p>Setelah perintah sebelumnya berhasil dijalankan, selanjutnya kita akan melakukan import isi berkas hasil scrape sebelumnya kedalam Pandas DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># pd.options.mode.chained_assignment = None</span>
+<span class="c1"># pd.options.display.max_colwidth = None</span>
+<span class="c1"># pd.options.display.max_columns = None</span>
+<span class="c1"># pd.options.display.max_rows = None</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;19_121_tweets_labeled.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="s1">&#39;Tweet&#39;</span><span class="p">,</span> <span class="s1">&#39;Label&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-7f36332d-f2c9-42b5-ae60-dcadad550215">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>User</th>
+      <th>Tweet</th>
+      <th>Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Truncvg</td>
+      <td>@jokowi Mentolo napuk cocot.e samean aku pak\r...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>WartaEkonomi</td>
+      <td>Achmad Nur Hidayat Ungkap Kemungkinan Kaitan P...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>okezonenews</td>
+      <td>Bjorka: Apa Anda (Jokowi) butuh bantuan saya u...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>infoBanyumas12</td>
+      <td>#Foto Presiden Jokowi mengakui kenaikan harga ...</td>
+      <td>Positif</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Metdro2</td>
+      <td>@Yatie84991237 @_TNIAL_ @edhi_shi @JohnVirgoVj...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>bn_1c</td>
+      <td>President Jokowi is Committed to Resolving Hum...</td>
+      <td>Positif</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>adi27setiawan</td>
+      <td>@jokowi Telek pak2, kekayaan indo hanya dinikm...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>AyahFerGie</td>
+      <td>@yosnggarang @jokowi Tiada hari tanpa omong ko...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>de_fatah</td>
+      <td>@JSuryoP1 Kasihan Pak Prabowo juga. Sudah rela...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>mofaisalakbar</td>
+      <td>@fadjarkim_ Itu orang pssi mirip jokowi, pante...</td>
+      <td>Negatif</td>
+    </tr>
+  </tbody>
+</table>
+<p>81 rows × 3 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-7f36332d-f2c9-42b5-ae60-dcadad550215')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-7f36332d-f2c9-42b5-ae60-dcadad550215 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-7f36332d-f2c9-42b5-ae60-dcadad550215');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="preprocessing-data-tweets">
+<h2><strong>Preprocessing Data Tweets</strong><a class="headerlink" href="#preprocessing-data-tweets" title="Permalink to this headline">#</a></h2>
+<section id="case-folding">
+<h3>Case Folding<a class="headerlink" href="#case-folding" title="Permalink to this headline">#</a></h3>
+<p>Case folding merupakan tahap text preprocessing yang berguna untuk :</p>
+<ul class="simple">
+<li><p>Mengubah huruf kapital menjadi huruf kecil</p></li>
+<li><p>Mengapus tanda baca</p></li>
+<li><p>Menghapus angka</p></li>
+<li><p>Menghapus karakter kosong</p></li>
+</ul>
+<br>
+<p>Sebelum melakukan case folding diatas, kode ini juga melakukan penghapusan link dan mention yang ada pada data tweet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="c1">#Mengapus link dan mention</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">indx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]:</span>
+  <span class="n">temp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">][</span><span class="n">indx</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;http&#39;</span> <span class="ow">in</span> <span class="n">j</span><span class="p">:</span>
+      <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">j</span>,&quot; &quot;, regex=True)
+    <span class="k">if</span> <span class="s1">&#39;@&#39;</span> <span class="ow">in</span> <span class="n">j</span><span class="p">:</span>
+      <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">j</span>,&quot; &quot;, regex=True)
+  <span class="n">indx</span><span class="o">+=</span><span class="mi">1</span>
+
+
+
+<span class="c1">#mengubah menjadi huruf kecil</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1">#menghapus tanda baca</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">:</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\</span><span class="si">%s</span><span class="s1">]&#39;</span><span class="o">%</span><span class="k">char</span>,&quot; &quot;, regex=True)
+
+<span class="c1">#menghapus angka</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">#menghapus karakter kosong</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;bjorka apa anda jokowi butuh bantuan saya untuk menyelesaikan masalah ini pak &#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stopwords-removal">
+<h3>Stopwords Removal<a class="headerlink" href="#stopwords-removal" title="Permalink to this headline">#</a></h3>
+<p>StopWords Removal merupakan tahap prepocessing yang berguna untuk menhapus kata umum yang biasanya muncul dalam jumlah besar dan dianggap tidak memiliki makna. Contoh stopword dalam bahasa Indonesia adalah “yang”, “dan”, “di”, “dari”, dll.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">json</span> 
+<span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/smilesense/stopwords-id/master/stopwords-id.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">list_stopwords</span><span class="p">:</span>
+    <span class="n">data_stopword</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">list_stopwords</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data_stopword</span><span class="p">:</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b</span><span class="si">%s</span><span class="s1">\b&#39;</span><span class="o">%</span><span class="k">i</span>, &#39;&#39;, regex=True)
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;bjorka jokowi butuh bantuan menyelesaikan &#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stemming">
+<h3>Stemming<a class="headerlink" href="#stemming" title="Permalink to this headline">#</a></h3>
+<p>Stemming merupakan tahapan dalam preprocessing yang berguna untuk mengubah kata yang memiliki imbuhan menjadi kata dasarnya. Contohnya adalah, misal pada suatu teks terdapat kata “berjalan”, maka dengan menerapkan metode stemming, teks tersebut akan diubah menjadi kata “jalan” atau bentuk dasar dari kata “berjalan”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import StemmerFactory class</span>
+<span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
+
+<span class="c1"># create stemmer</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+<span class="c1"># stemming process</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="n">ind</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]:</span>
+      <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">][</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sentence</span><span class="p">))</span>
+      <span class="n">ind</span><span class="o">+=</span><span class="mi">1</span>
+  <span class="k">raise</span> <span class="ne">KeyboardInterrupt</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">else</span> <span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bjorka jokowi butuh bantu selesai
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tokenisasi">
+<h3>Tokenisasi<a class="headerlink" href="#tokenisasi" title="Permalink to this headline">#</a></h3>
+<p>Tokenizing adalah tahap preprocessing yang berguna untuk memisahkan teks menjadi potongan-potongan yang disebut sebagai token untuk kemudian di analisa. Kata, angka, simbol, tanda baca dan entitas penting lainnya dapat dianggap sebagai token.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indeks</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]:</span>
+    <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">][</span><span class="n">indeks</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">indeks</span><span class="o">+=</span><span class="mi">1</span>
+
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bjorka&#39;, &#39;jokowi&#39;, &#39;butuh&#39;, &#39;bantu&#39;, &#39;selesai&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hasil-preprocessing">
+<h3>Hasil Preprocessing<a class="headerlink" href="#hasil-preprocessing" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-a3b36880-3ff7-40ef-9948-ea9c9e628816">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>User</th>
+      <th>Tweet</th>
+      <th>Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Truncvg</td>
+      <td>[mentolo, napuk, cocot, e, samean, ga, nduwe, ...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>WartaEkonomi</td>
+      <td>[achmad, nur, hidayat, kait, lengser, suharso,...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>okezonenews</td>
+      <td>[bjorka, jokowi, butuh, bantu, selesai]</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>infoBanyumas12</td>
+      <td>[foto, presiden, jokowi, aku, naik, harga, bbm...</td>
+      <td>Positif</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Metdro2</td>
+      <td>[iya, dluhuran]</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>bn_1c</td>
+      <td>[president, jokowi, is, committed, to, resolvi...</td>
+      <td>Positif</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>adi27setiawan</td>
+      <td>[telek, kaya, indo, nikmat, gelintir, orang, y...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>AyahFerGie</td>
+      <td>[tiada, omong, kosong, citra]</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>de_fatah</td>
+      <td>[kasihan, prabowo, rela, bantu, elu, elu, puji...</td>
+      <td>Negatif</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>mofaisalakbar</td>
+      <td>[orang, pssi, jokowi, pantes, aja, suram]</td>
+      <td>Negatif</td>
+    </tr>
+  </tbody>
+</table>
+<p>81 rows × 3 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a3b36880-3ff7-40ef-9948-ea9c9e628816')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-a3b36880-3ff7-40ef-9948-ea9c9e628816 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-a3b36880-3ff7-40ef-9948-ea9c9e628816');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+</section>
+<section id="term-frequency-tf">
+<h2><strong>Term Frequency (TF)</strong><a class="headerlink" href="#term-frequency-tf" title="Permalink to this headline">#</a></h2>
+<p>Term Frequency merupakan metode yang digunakan untuk mengetahui seberapa sering suatu kata muncul dalam suatu teks. Semakin banyak frekuensi kemunculan dari kata tsb, semakin besar pula nanti nilainya.</p>
+<section id="term-frequency-keseluruhan">
+<h3>Term Frequency Keseluruhan<a class="headerlink" href="#term-frequency-keseluruhan" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">listkata</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]:</span>
+    <span class="n">listkata</span> <span class="o">=</span> <span class="n">listkata</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">listkata_nodup</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">listkata</span><span class="p">))</span>
+<span class="n">hasil_hitung</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">test1</span> <span class="ow">in</span> <span class="n">listkata_nodup</span><span class="p">:</span>
+    <span class="n">jumlah</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">test2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">listkata</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">test1</span> <span class="o">==</span> <span class="n">listkata</span><span class="p">[</span><span class="n">test2</span><span class="p">]:</span>
+            <span class="n">jumlah</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="n">hasil_hitung</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">test1</span> : jumlah})
+    
+<span class="n">hasil_hitung</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">hasil_hitung</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil_hitung</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;jokowi&#39;: 37, &#39;yg&#39;: 27, &#39;presiden&#39;: 12, &#39;gak&#39;: 10, &#39;ga&#39;: 9, &#39;bangun&#39;: 9, &#39;bbm&#39;: 9, &#39;aja&#39;: 9, &#39;nya&#39;: 6, &#39;demo&#39;: 6, &#39;rakyat&#39;: 6, &#39;bjorka&#39;: 5, &#39;naik&#39;: 5, &#39;perintah&#39;: 5, &#39;orang&#39;: 5, &#39;subsidi&#39;: 5, &#39;tau&#39;: 5, &#39;negeri&#39;: 5, &#39;anies&#39;: 5, &#39;kaya&#39;: 5, &#39;bantu&#39;: 4, &#39;kerja&#39;: 4, &#39;jawa&#39;: 4, &#39;to&#39;: 4, &#39;negara&#39;: 4, &#39;ya&#39;: 4, &#39;data&#39;: 4, &#39;amp&#39;: 4, &#39;periode&#39;: 4, &#39;tambal&#39;: 4, &#39;harga&#39;: 3, &#39;biar&#39;: 3, &#39;hoax&#39;: 3, &#39;janji&#39;: 3, &#39;surplus&#39;: 3, &#39;apbn&#39;: 3, &#39;blt&#39;: 3, &#39;nama&#39;: 3, &#39;bendung&#39;: 3, &#39;of&#39;: 3, &#39;indonesia&#39;: 3, &#39;penuh&#39;: 3, &#39;dasar&#39;: 3, &#39;tuh&#39;: 3, &#39;kompeten&#39;: 3, &#39;demokrat&#39;: 3, &#39;ganti&#39;: 3, &#39;ekonomi&#39;: 3, &#39;pasang&#39;: 3, &#39;tuju&#39;: 3, &#39;percaya&#39;: 3, &#39;jabat&#39;: 3, &#39;dosa&#39;: 3, &#39;jis&#39;: 3, &#39;e&#39;: 2, &#39;samean&#39;: 2, &#39;foto&#39;: 2, &#39;pengaruh&#39;: 2, &#39;laju&#39;: 2, &#39;inflasi&#39;: 2, &#39;berita&#39;: 2, &#39;lanjut&#39;: 2, &#39;anak&#39;: 2, &#39;klo&#39;: 2, &#39;uang&#39;: 2, &#39;bagus&#39;: 2, &#39;aceh&#39;: 2, &#39;beli&#39;: 2, &#39;deh&#39;: 2, &#39;raja&#39;: 2, &#39;ngibul&#39;: 2, &#39;klemer&#39;: 2, &#39;jakarta&#39;: 2, &#39;ambassador&#39;: 2, &#39;president&#39;: 2, &#39;in&#39;: 2, &#39;s&#39;: 2, &#39;suara&#39;: 2, &#39;adlh&#39;: 2, &#39;tuhan&#39;: 2, &#39;mundur&#39;: 2, &#39;usaha&#39;: 2, &#39;rintis&#39;: 2, &#39;bin&#39;: 2, &#39;udah&#39;: 2, &#39;gimana&#39;: 2, &#39;sampe&#39;: 2, &#39;sih&#39;: 2, &#39;aman&#39;: 2, &#39;jujur&#39;: 2, &#39;udh&#39;: 2, &#39;itung&#39;: 2, &#39;an&#39;: 2, &#39;politik&#39;: 2, &#39;paham&#39;: 2, &#39;hilang&#39;: 2, &#39;contoh&#39;: 2, &#39;bentuk&#39;: 2, &#39;tim&#39;: 2, &#39;khusus&#39;: 2, &#39;serang&#39;: 2, &#39;hacker&#39;: 2, &#39;ngeri&#39;: 2, &#39;kelompok&#39;: 2, &#39;salah&#39;: 2, &#39;kg&#39;: 2, &#39;turun&#39;: 2, &#39;sulit&#39;: 2, &#39;dr&#39;: 2, &#39;coba&#39;: 2, &#39;tawar&#39;: 2, &#39;menteri&#39;: 2, &#39;gitu&#39;: 2, &#39;teriak&#39;: 2, &#39;sanggup&#39;: 2, &#39;rp&#39;: 2, &#39;t&#39;: 2, &#39;dg&#39;: 2, &#39;sindir&#39;: 2, &#39;absen&#39;: 2, &#39;sidang&#39;: 2, &#39;pbb&#39;: 2, &#39;daya&#39;: 2, &#39;masyarakat&#39;: 2, &#39;ikan&#39;: 2, &#39;desa&#39;: 2, &#39;klw&#39;: 2, &#39;anda&#39;: 2, &#39;dukung&#39;: 2, &#39;tolak&#39;: 2, &#39;tulis&#39;: 2, &#39;kuasa&#39;: 2, &#39;duta&#39;: 2, &#39;habibie&#39;: 2, &#39;keluarga&#39;: 2, &#39;c&#39;: 2, &#39;sah&#39;: 2, &#39;tahun&#39;: 2, &#39;gue&#39;: 2, &#39;cawapres&#39;: 2, &#39;capres&#39;: 2, &#39;human&#39;: 2, &#39;rights&#39;: 2, &#39;violations&#39;: 2, &#39;and&#39;: 2, &#39;the&#39;: 2, &#39;n&#39;: 2, &#39;si&#39;: 2, &#39;elu&#39;: 2, &#39;mentolo&#39;: 1, &#39;napuk&#39;: 1, &#39;cocot&#39;: 1, &#39;nduwe&#39;: 1, &#39;cermin&#39;: 1, &#39;ta&#39;: 1, &#39;achmad&#39;: 1, &#39;nur&#39;: 1, &#39;hidayat&#39;: 1, &#39;kait&#39;: 1, &#39;lengser&#39;: 1, &#39;suharso&#39;: 1, &#39;monoarfa&#39;: 1, &#39;ikn&#39;: 1, &#39;libat&#39;: 1, &#39;butuh&#39;: 1, &#39;selesai&#39;: 1, &#39;aku&#39;: 1, &#39;daerah&#39;: 1, &#39;redam&#39;: 1, &#39;kris&#39;: 1, &#39;biro&#39;: 1, &#39;pers&#39;: 1, &#39;sekretariat&#39;: 1, &#39;iya&#39;: 1, &#39;dluhuran&#39;: 1, &#39;jual&#39;: 1, &#39;utang&#39;: 1, &#39;bang&#39;: 1, &#39;thdap&#39;: 1, &#39;kalimantan&#39;: 1, &#39;plakunya&#39;: 1, &#39;bebas&#39;: 1, &#39;juang&#39;: 1, &#39;tegak&#39;: 1, &#39;benar&#39;: 1, &#39;spaya&#39;: 1, &#39;jangn&#39;: 1, &#39;suka&#39;: 1, &#39;mengadudomba&#39;: 1, &#39;bangsa&#39;: 1, &#39;lupa&#39;: 1, &#39;yaa&#39;: 1, &#39;emg&#39;: 1, &#39;hapus&#39;: 1, &#39;bagi&#39;: 1, &#39;dprd&#39;: 1, &#39;cari&#39;: 1, &#39;temen&#39;: 1, &#39;nyata&#39;: 1, &#39;pertalite&#39;: 1, &#39;spbu&#39;: 1, &#39;antri&#39;: 1, &#39;jam&#39;: 1, &#39;pom&#39;: 1, &#39;mini&#39;: 1, &#39;ecer&#39;: 1, &#39;ribu&#39;: 1, &#39;liter&#39;: 1, &#39;ebong&#39;: 1, &#39;tolol&#39;: 1, &#39;borong&#39;: 1, &#39;cilik&#39;: 1, &#39;buatin&#39;: 1, &#39;jembatan&#39;: 1, &#39;maklumin&#39;: 1, &#39;nge&#39;: 1, &#39;prank&#39;: 1, &#39;bisa&#39;: 1, &#39;plonga&#39;: 1, &#39;plongo&#39;: 1, &#39;kagak&#39;: 1, &#39;hari&#39;: 1, &#39;faktanohoax&#39;: 1, &#39;peduli&#39;: 1, &#39;thd&#39;: 1, &#39;layak&#39;: 1, &#39;apresiasi&#39;: 1, &#39;sukamahi&#39;: 1, &#39;ciawi&#39;: 1, &#39;barat&#39;: 1, &#39;kendali&#39;: 1, &#39;banjir&#39;: 1, &#39;bersamajokowi&#39;: 1, &#39;indonesiamaju&#39;: 1, &#39;today&#39;: 1, &#39;our&#39;: 1, &#39;new&#39;: 1, &#39;nadia&#39;: 1, &#39;burger&#39;: 1, &#39;presented&#39;: 1, &#39;her&#39;: 1, &#39;letters&#39;: 1, &#39;credence&#39;: 1, &#39;at&#39;: 1, &#39;presidential&#39;: 1, &#39;palace&#39;: 1, &#39;she&#39;: 1, &#39;officially&#39;: 1, &#39;canada&#39;: 1, &#39;th&#39;: 1, &#39;canadaindonesia&#39;: 1, &#39;plis&#39;: 1, &#39;inpes&#39;: 1, &#39;may&#39;: 1, &#39;kantry&#39;: 1, &#39;ples&#39;: 1, &#39;utangin&#39;: 1, &#39;temu&#39;: 1, &#39;ktnya&#39;: 1, &#39;kangen&#39;: 1, &#39;kt&#39;: 1, &#39;sj&#39;: 1, &#39;bohong&#39;: 1, &#39;biasa&#39;: 1, &#39;budaya&#39;: 1, &#39;malu&#39;: 1, &#39;ngak&#39;: 1, &#39;urus&#39;: 1, &#39;buat&#39;: 1, &#39;baik&#39;: 1, &#39;istano&#39;: 1, &#39;hahahaha&#39;: 1, &#39;trs&#39;: 1, &#39;teman&#39;: 1, &#39;partai&#39;: 1, &#39;kah&#39;: 1, &#39;target&#39;: 1, &#39;objektig&#39;: 1, &#39;membangunnkri&#39;: 1, &#39;indonesiamembangun&#39;: 1, &#39;seremonial&#39;: 1, &#39;useless&#39;: 1, &#39;yoh&#39;: 1, &#39;nda&#39;: 1, &#39;sen&#39;: 1, &#39;assalamualaikum&#39;: 1, &#39;cinta&#39;: 1, &#39;nanya&#39;: 1, &#39;kalu&#39;: 1, &#39;karyawan&#39;: 1, &#39;lo&#39;: 1, &#39;cek&#39;: 1, &#39;wni&#39;: 1, &#39;nasib&#39;: 1, &#39;diawasin&#39;: 1, &#39;atuh&#39;: 1, &#39;gw&#39;: 1, &#39;akses&#39;: 1, &#39;ngedukun&#39;: 1, &#39;sample&#39;: 1, &#39;medsos&#39;: 1, &#39;barang&#39;: 1, &#39;langka&#39;: 1, &#39;ngaco&#39;: 1, &#39;narasi&#39;: 1, &#39;pemimpinadalah&#39;: 1, &#39;bodoh&#39;: 1, &#39;laknat&#39;: 1, &#39;tegur&#39;: 1, &#39;keliru&#39;: 1, &#39;pimpin&#39;: 1, &#39;biang&#39;: 1, &#39;kerok&#39;: 1, &#39;hancur&#39;: 1, &#39;pdhl&#39;: 1, &#39;formula&#39;: 1, &#39;aje&#39;: 1, &#39;roboh&#39;: 1, &#39;entar&#39;: 1, &#39;disalahin&#39;: 1, &#39;sy&#39;: 1, &#39;pesimis&#39;: 1, &#39;balas&#39;: 1, &#39;budi&#39;: 1, &#39;bener&#39;: 1, &#39;angkot&#39;: 1, &#39;jaklingko&#39;: 1, &#39;hebat&#39;: 1, &#39;jiwa&#39;: 1, &#39;program&#39;: 1, &#39;dahulu&#39;: 1, &#39;kembang&#39;: 1, &#39;busway&#39;: 1, &#39;sutiyoso&#39;: 1, &#39;kjp&#39;: 1, &#39;ganjil&#39;: 1, &#39;genap&#39;: 1, &#39;ahok&#39;: 1, &#39;jalan&#39;: 1, &#39;gubernur&#39;: 1, &#39;asing&#39;: 1, &#39;gambar&#39;: 1, &#39;photo&#39;: 1, &#39;ava&#39;: 1, &#39;mu&#39;: 1, &#39;atas&#39;: 1, &#39;marak&#39;: 1, &#39;bocor&#39;: 1, &#39;smarternotharder&#39;: 1, &#39;sedap&#39;: 1, &#39;korea&#39;: 1, &#39;squid&#39;: 1, &#39;game&#39;: 1, &#39;ios&#39;: 1, &#39;pagi&#39;: 1, &#39;ricuh&#39;: 1, &#39;bonyok&#39;: 1, &#39;ujung&#39;: 1, &#39;pastiii&#39;: 1, &#39;jahat&#39;: 1, &#39;btw&#39;: 1, &#39;sambo&#39;: 1, &#39;sehat&#39;: 1, &#39;payah&#39;: 1, &#39;prof&#39;: 1, &#39;create&#39;: 1, &#39;tni&#39;: 1, &#39;al&#39;: 1, &#39;lochh&#39;: 1, &#39;perwira&#39;: 1, &#39;laut&#39;: 1, &#39;kasih&#39;: 1, &#39;loh&#39;: 1, &#39;kayak&#39;: 1, &#39;krn&#39;: 1, &#39;bawah&#39;: 1, &#39;banyak&#39;: 1, &#39;nggak&#39;: 1, &#39;ngomong&#39;: 1, &#39;tembok&#39;: 1, &#39;bosen&#39;: 1, &#39;minimal&#39;: 1, &#39;harap&#39;: 1, &#39;dapet&#39;: 1, &#39;kacau&#39;: 1, &#39;balau&#39;: 1, &#39;korupsi&#39;: 1, &#39;dah&#39;: 1, &#39;urusin&#39;: 1, &#39;main&#39;: 1, &#39;peran&#39;: 1, &#39;demokrasi&#39;: 1, &#39;lepas&#39;: 1, &#39;therightmanontherightplace&#39;: 1, &#39;opini&#39;: 1, &#39;pribadi&#39;: 1, &#39;konstitusi&#39;: 1, &#39;uu&#39;: 1, &#39;wakil&#39;: 1, &#39;paket&#39;: 1, &#39;sdh&#39;: 1, &#39;sbg&#39;: 1, &#39;wapres&#39;: 1, &#39;nyalon&#39;: 1, &#39;lg&#39;: 1, &#39;kecuali&#39;: 1, &#39;nik&#39;: 1, &#39;beda&#39;: 1, &#39;ijasah&#39;: 1, &#39;dll&#39;: 1, &#39;hehehe&#39;: 1, &#39;budidaya&#39;: 1, &#39;dukoraharjo&#39;: 1, &#39;semangat&#39;: 1, &#39;tppjawatimur&#39;: 1, &#39;tppkabmalang&#39;: 1, &#39;tpp&#39;: 1, &#39;kepanjen&#39;: 1, &#39;sobat&#39;: 1, &#39;mari&#39;: 1, &#39;jokowimarufamin&#39;: 1, &#39;tweet&#39;: 1, &#39;bpp&#39;: 1, &#39;lapor&#39;: 1, &#39;dirut&#39;: 1, &#39;bumn&#39;: 1, &#39;aneh&#39;: 1, &#39;komisi&#39;: 1, &#39;dpr&#39;: 1, &#39;substansi&#39;: 1, &#39;oneng&#39;: 1, &#39;oot&#39;: 1, &#39;ym&#39;: 1, &#39;kepala&#39;: 1, &#39;anggar&#39;: 1, &#39;sumber&#39;: 1, &#39;khas&#39;: 1, &#39;tani&#39;: 1, &#39;ternak&#39;: 1, &#39;tahan&#39;: 1, &#39;pangan&#39;: 1, &#39;handal&#39;: 1, &#39;koperasi&#39;: 1, &#39;mosok&#39;: 1, &#39;mesti&#39;: 1, &#39;tar&#39;: 1, &#39;jg&#39;: 1, &#39;cuman&#39;: 1, &#39;ecapedeh&#39;: 1, &#39;welcome&#39;: 1, &#39;me&#39;: 1, &#39;rt&#39;: 1, &#39;terima&#39;: 1, &#39;surat&#39;: 1, &#39;delapan&#39;: 1, &#39;sahabat&#39;: 1, &#39;istana&#39;: 1, &#39;merdeka&#39;: 1, &#39;asal&#39;: 1, &#39;kanada&#39;: 1, &#39;thailand&#39;: 1, &#39;austria&#39;: 1, &#39;singapura&#39;: 1, &#39;belgia&#39;: 1, &#39;tanzania&#39;: 1, &#39;finlandia&#39;: 1, &#39;d&#39;: 1, &#39;kyk&#39;: 1, &#39;jgn&#39;: 1, &#39;kaburrr&#39;: 1, &#39;didatengin&#39;: 1, &#39;asem&#39;: 1, &#39;kek&#39;: 1, &#39;jokowow&#39;: 1, &#39;eyang&#39;: 1, &#39;harto&#39;: 1, &#39;mantan&#39;: 1, &#39;model&#39;: 1, &#39;jiancuuuuuuuuuuuk&#39;: 1, &#39;priode&#39;: 1, &#39;hitung&#39;: 1, &#39;laksana&#39;: 1, &#39;akibat&#39;: 1, &#39;sasar&#39;: 1, &#39;mulu&#39;: 1, &#39;gin&#39;: 1, &#39;mending&#39;: 1, &#39;diturunin&#39;: 1, &#39;ngoceh&#39;: 1, &#39;nungging&#39;: 1, &#39;upil&#39;: 1, &#39;yaaaa&#39;: 1, &#39;gtu&#39;: 1, &#39;lu&#39;: 1, &#39;gas&#39;: 1, &#39;skrg&#39;: 1, &#39;mggu&#39;: 1, &#39;respons&#39;: 1, &#39;bssn&#39;: 1, &#39;risiko&#39;: 1, &#39;bengkak&#39;: 1, &#39;penyesuian&#39;: 1, &#39;bulan&#39;: 1, &#39;kalo&#39;: 1, &#39;ngaconya&#39;: 1, &#39;kualiats&#39;: 1, &#39;pns&#39;: 1, &#39;mati&#39;: 1, &#39;emang&#39;: 1, &#39;pikirin&#39;: 1, &#39;mantu&#39;: 1, &#39;ngapain&#39;: 1, &#39;pusing&#39;: 1, &#39;peluang&#39;: 1, &#39;sosok&#39;: 1, &#39;tekan&#39;: 1, &#39;sengaja&#39;: 1, &#39;murni&#39;: 1, &#39;rancang&#39;: 1, &#39;terus&#39;: 1, &#39;rubah&#39;: 1, &#39;doang&#39;: 1, &#39;stadiun&#39;: 1, &#39;bmw&#39;: 1, &#39;leta&#39;: 1, &#39;batu&#39;: 1, &#39;p&#39;: 1, &#39;rename&#39;: 1, &#39;mjd&#39;: 1, &#39;culas&#39;: 1, &#39;sifat&#39;: 1, &#39;buka&#39;: 1, &#39;tdk&#39;: 1, &#39;valid&#39;: 1, &#39;sbenarnya&#39;: 1, &#39;rusak&#39;: 1, &#39;kondusivitas&#39;: 1, &#39;dngan&#39;: 1, &#39;lempar&#39;: 1, &#39;ancam&#39;: 1, &#39;palsu&#39;: 1, &#39;dng&#39;: 1, &#39;politis&#39;: 1, &#39;haha&#39;: 1, &#39;milih&#39;: 1, &#39;ato&#39;: 1, &#39;tpi&#39;: 1, &#39;negri&#39;: 1, &#39;pduli&#39;: 1, &#39;repot&#39;: 1, &#39;aegala&#39;: 1, &#39;masalah&#39;: 1, &#39;ahli&#39;: 1, &#39;prestasi&#39;: 1, &#39;survey&#39;: 1, &#39;abal&#39;: 1, &#39;sebut&#39;: 1, &#39;mayoritas&#39;: 1, &#39;senyum&#39;: 1, &#39;bangga&#39;: 1, &#39;menang&#39;: 1, &#39;oposisi&#39;: 1, &#39;santai&#39;: 1, &#39;nyanyi&#39;: 1, &#39;happybirthday&#39;: 1, &#39;warga&#39;: 1, &#39;luar&#39;: 1, &#39;is&#39;: 1, &#39;committed&#39;: 1, &#39;resolving&#39;: 1, &#39;government&#39;: 1, &#39;will&#39;: 1, &#39;prioritize&#39;: 1, &#39;principle&#39;: 1, &#39;justice&#39;: 1, &#39;for&#39;: 1, &#39;victims&#39;: 1, &#39;perpetrators&#39;: 1, &#39;i&#39;: 1, &#39;really&#39;: 1, &#39;agree&#39;: 1, &#39;westpapuan&#39;: 1, &#39;telek&#39;: 1, &#39;indo&#39;: 1, &#39;nikmat&#39;: 1, &#39;gelintir&#39;: 1, &#39;talu&#39;: 1, &#39;jauhhh&#39;: 1, &#39;gap&#39;: 1, &#39;miskin&#39;: 1, &#39;tiada&#39;: 1, &#39;omong&#39;: 1, &#39;kosong&#39;: 1, &#39;citra&#39;: 1, &#39;kasihan&#39;: 1, &#39;prabowo&#39;: 1, &#39;rela&#39;: 1, &#39;puji&#39;: 1, &#39;muji&#39;: 1, &#39;jilat&#39;: 1, &#39;pssi&#39;: 1, &#39;pantes&#39;: 1, &#39;suram&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="term-frequency-tiap-tweet">
+<h3>Term Frequency Tiap Tweet<a class="headerlink" href="#term-frequency-tiap-tweet" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">terms</span><span class="p">(</span><span class="n">dataframe</span><span class="p">):</span>
+  <span class="c1"># pd.options.mode.chained_assignment = None</span>
+  <span class="c1"># pd.options.display.max_colwidth = None</span>
+  <span class="c1"># pd.options.display.max_columns = None</span>
+  <span class="c1"># pd.options.display.max_rows = None</span>
+
+  <span class="n">df3</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">for</span> <span class="n">inter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">])):</span>
+      <span class="k">for</span> <span class="n">fitur</span> <span class="ow">in</span> <span class="n">hasil_hitung</span><span class="p">:</span>
+          <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">fitur</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+          <span class="n">a</span><span class="o">+=</span><span class="mi">1</span>
+
+  <span class="k">for</span> <span class="n">inter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">])):</span>
+    <span class="k">for</span> <span class="n">fitur</span> <span class="ow">in</span> <span class="n">hasil_hitung</span><span class="p">:</span>
+        <span class="n">cek</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">][</span><span class="n">inter</span><span class="p">]</span>
+        <span class="n">jumlah</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">iter2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cek</span><span class="p">)):</span>
+          <span class="k">if</span> <span class="n">fitur</span> <span class="o">==</span> <span class="n">cek</span><span class="p">[</span><span class="n">iter2</span><span class="p">]:</span>
+            <span class="n">jumlah</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">fitur</span>][inter] = jumlah
+        <span class="n">a</span><span class="o">+=</span><span class="mi">1</span>
+  <span class="n">df3</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;my_data.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">df3</span>
+<span class="n">terms</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:11: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead.  To get a de-fragmented frame, use `newframe = frame.copy()`
+  # This is added back by InteractiveShellApp.init_path()
+/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:21: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-f87747cc-9f09-4072-a850-4c0c782fe2df">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>User</th>
+      <th>Tweet</th>
+      <th>Label</th>
+      <th>jokowi</th>
+      <th>yg</th>
+      <th>presiden</th>
+      <th>gak</th>
+      <th>ga</th>
+      <th>bangun</th>
+      <th>bbm</th>
+      <th>...</th>
+      <th>citra</th>
+      <th>kasihan</th>
+      <th>prabowo</th>
+      <th>rela</th>
+      <th>puji</th>
+      <th>muji</th>
+      <th>jilat</th>
+      <th>pssi</th>
+      <th>pantes</th>
+      <th>suram</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Truncvg</td>
+      <td>[mentolo, napuk, cocot, e, samean, ga, nduwe, ...</td>
+      <td>Negatif</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>WartaEkonomi</td>
+      <td>[achmad, nur, hidayat, kait, lengser, suharso,...</td>
+      <td>Negatif</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>okezonenews</td>
+      <td>[bjorka, jokowi, butuh, bantu, selesai]</td>
+      <td>Negatif</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>infoBanyumas12</td>
+      <td>[foto, presiden, jokowi, aku, naik, harga, bbm...</td>
+      <td>Positif</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Metdro2</td>
+      <td>[iya, dluhuran]</td>
+      <td>Negatif</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>bn_1c</td>
+      <td>[president, jokowi, is, committed, to, resolvi...</td>
+      <td>Positif</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>adi27setiawan</td>
+      <td>[telek, kaya, indo, nikmat, gelintir, orang, y...</td>
+      <td>Negatif</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>AyahFerGie</td>
+      <td>[tiada, omong, kosong, citra]</td>
+      <td>Negatif</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>de_fatah</td>
+      <td>[kasihan, prabowo, rela, bantu, elu, elu, puji...</td>
+      <td>Negatif</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>mofaisalakbar</td>
+      <td>[orang, pssi, jokowi, pantes, aja, suram]</td>
+      <td>Negatif</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>81 rows × 606 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f87747cc-9f09-4072-a850-4c0c782fe2df')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-f87747cc-9f09-4072-a850-4c0c782fe2df button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-f87747cc-9f09-4072-a850-4c0c782fe2df');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+</section>
+<section id="melakukan-training">
+<h2>Melakukan Training<a class="headerlink" href="#melakukan-training" title="Permalink to this headline">#</a></h2>
+<p>Training disini berfungsi untuk menghindari overfitting, yaitu keadaan dimana suatu model berusaha untuk mempelajari seluruh detail dalam data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;my_data.csv&#39;</span><span class="p">)</span>
+<span class="n">df4</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Negatif&#39;, &#39;Positif&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span><span class="o">=</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">df4</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="s1">&#39;Tweet&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">df4</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">],</span>
+    <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">y_train</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43    Negatif
+4     Negatif
+72    Negatif
+17    Negatif
+63    Negatif
+8     Negatif
+6     Negatif
+59    Positif
+38    Negatif
+56    Negatif
+34    Negatif
+28    Positif
+11    Negatif
+54    Negatif
+23    Negatif
+10    Positif
+31    Negatif
+45    Negatif
+78    Negatif
+1     Negatif
+32    Negatif
+68    Negatif
+14    Negatif
+52    Negatif
+19    Negatif
+29    Negatif
+60    Negatif
+49    Negatif
+24    Negatif
+35    Negatif
+18    Negatif
+0     Negatif
+79    Negatif
+15    Positif
+5     Negatif
+62    Negatif
+16    Positif
+51    Positif
+20    Positif
+75    Negatif
+25    Negatif
+37    Negatif
+46    Negatif
+39    Negatif
+65    Negatif
+58    Negatif
+12    Negatif
+70    Positif
+36    Negatif
+21    Negatif
+9     Negatif
+77    Negatif
+67    Positif
+64    Negatif
+47    Negatif
+44    Negatif
+Name: Label, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bagging-classifier">
+<h2><strong>Bagging CLassifier</strong><a class="headerlink" href="#bagging-classifier" title="Permalink to this headline">#</a></h2>
+<p>Pengklasifikasi Bagging adalah meta-estimator ensemble yang cocok dengan pengklasifikasi dasar masing-masing pada subset acak dari dataset asli dan kemudian menggabungkan prediksi individu mereka (baik dengan pemungutan suara atau rata-rata) untuk membentuk prediksi akhir. Meta-estimator seperti itu biasanya dapat digunakan sebagai cara untuk mengurangi varians dari estimator kotak hitam (misalnya, pohon keputusan), dengan memasukkan pengacakan ke dalam prosedur konstruksinya dan kemudian membuat ansambel darinya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="s1">&#39;Tweet&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df4</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">model_selection</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
+
+<span class="c1"># kfold = model_selection.KFold(n_splits = 3,</span>
+<span class="c1">#                        random_state = 5, shuffle=True)</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">n_informative</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_redundant</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">BaggingClassifier</span><span class="p">(</span><span class="n">base_estimator</span><span class="o">=</span><span class="n">SVC</span><span class="p">(),</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># results = model_selection.cross_val_score(clf, X, y, cv = kfold)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;accuracy :&quot;</span><span class="p">)</span>
+<span class="c1"># print(results.mean())</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy :
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.91
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="random-forest">
+<h2><strong>Random Forest</strong><a class="headerlink" href="#random-forest" title="Permalink to this headline">#</a></h2>
+<p>Random Forest adalah algoritma pembelajaran mesin populer yang termasuk dalam teknik pembelajaran terawasi. Ini dapat digunakan untuk masalah Klasifikasi dan Regresi di ML. Hal ini didasarkan pada konsep ensemble learning, yang merupakan proses menggabungkan beberapa pengklasifikasi untuk memecahkan masalah yang kompleks dan untuk meningkatkan kinerja model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">n_informative</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_redundant</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># RandomForestClassifier(...)</span>
+<span class="c1"># print(clf.predict([[0, 0, 0, 0]]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;accuracy :&quot;</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy :
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.948
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="tugas_topicModeling.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><strong>Tugas Melakukan Topic Modeling</strong></p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Bihubbil Choir Aidifta<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
