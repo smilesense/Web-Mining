@@ -481,7 +481,7 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bagging-classifier">
    <strong>
-    Bagging CLassifier
+    Bagging Classifier
    </strong>
   </a>
  </li>
@@ -489,6 +489,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#random-forest">
    <strong>
     Random Forest
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stacking-classifier">
+   <strong>
+    Stacking Classifier
    </strong>
   </a>
  </li>
@@ -635,7 +642,7 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bagging-classifier">
    <strong>
-    Bagging CLassifier
+    Bagging Classifier
    </strong>
   </a>
  </li>
@@ -643,6 +650,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#random-forest">
    <strong>
     Random Forest
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stacking-classifier">
+   <strong>
+    Stacking Classifier
    </strong>
   </a>
  </li>
@@ -763,31 +777,31 @@ Berikut adalah penjelasan singkat mengenai script tersebut.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date           User  \
-0  2022-11-08 16:42:39+00:00     Cinere_007   
-1  2022-11-08 16:42:31+00:00      MatJohar3   
-2  2022-11-08 16:42:09+00:00     udhinjogja   
-3  2022-11-08 16:42:04+00:00  Paijo14565029   
-4  2022-11-08 16:41:58+00:00          doirx   
-..                       ...            ...   
-95 2022-11-08 16:29:09+00:00       PikoloXY   
-96 2022-11-08 16:28:45+00:00    MIntegritas   
-97 2022-11-08 16:28:29+00:00       PikoloXY   
-98 2022-11-08 16:28:16+00:00  ali_aliachmad   
-99 2022-11-08 16:28:03+00:00       VIVAcoid   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date             User  \
+0  2022-11-13 06:23:56+00:00      KaltimKarim   
+1  2022-11-13 06:23:50+00:00  IndonesiaRahayu   
+2  2022-11-13 06:23:40+00:00       Golichenko   
+3  2022-11-13 06:23:30+00:00  Rosanna07950119   
+4  2022-11-13 06:23:24+00:00  luthfiapriyanto   
+..                       ...              ...   
+95 2022-11-13 06:13:05+00:00   carnatavanhout   
+96 2022-11-13 06:12:51+00:00     ChakraBuwana   
+97 2022-11-13 06:12:46+00:00          XlMama4   
+98 2022-11-13 06:12:33+00:00         data_cek   
+99 2022-11-13 06:12:30+00:00   NAUFALCHANDRA2   
 
                                                 Tweet Label  
-0   Rektor UGM klarifikasi ijasah Pak Jokowi\nhttp...  None  
-1   @MARQUEZ__93 @PDI_Perjuangan @Gerindra @jokowi...  None  
-2   @keuangannews_id Era gusdur saja sbg bpk demok...  None  
-3   @CNNIndonesia Mo dukung mo gak kek...emang yan...  None  
-4   @Minietweets_ @jokowi Sudah sejak 1930 Esemka ...  None  
+0   Lambat Pemerintah kutai Timur cara bekerja.\nB...  None  
+1   Pertemuan bilateral dengan Sekjen PBB Antonio ...  None  
+2   .@g20org address the urgent risk of future pan...  None  
+3   Jokowi Pastikan 17 Kepala Negara akan hadir di...  None  
+4   Pendekatan Jokowi terhadap isu Internasional\n...  None  
 ..                                                ...   ...  
-95  &quot;Sudah, itu yang sudah pasti 17,&quot; ungkap Presi...  None  
-96  Presiden Joko Widodo atau Jokowi dalam beberap...  None  
-97  Dalam kesempatan tsb, Presiden Jokowi juga men...  None  
-98  @yo2thok @jokowi @DPR_RI Polri di bawah Menkumham  None  
-99  Wapres Tunjukkan Upaya Jokowi untuk Damaikan R...  None  
+95  @SporPolSing @arifinpordjo1 @bachrum_achmadi Y...  None  
+96  @zialogi @PrasieOet *ANEHNYA BIN AJAIB* \ndi e...  None  
+97  @RamliRizal Ngomong aja blepotan ko. Ngebet pe...  None  
+98  @jokowi @mohmahfudmd  @ListyoSigitP @PKSejahte...  None  
+99  @MARQUEZ__93 @AndiSinulingga @jokowi Ternyata ...  None  
 
 [100 rows x 4 columns]
 </pre></div>
@@ -831,7 +845,7 @@ if res == &#39;&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-7f36332d-f2c9-42b5-ae60-dcadad550215">
+  <div id="df-344b4906-e4ef-46c1-9531-be758972f4da">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -927,7 +941,7 @@ if res == &#39;&#39;:
 </table>
 <p>81 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-7f36332d-f2c9-42b5-ae60-dcadad550215')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-344b4906-e4ef-46c1-9531-be758972f4da')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -978,12 +992,12 @@ if res == &#39;&#39;:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-7f36332d-f2c9-42b5-ae60-dcadad550215 button.colab-df-convert');
+          document.querySelector('#df-344b4906-e4ef-46c1-9531-be758972f4da button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-7f36332d-f2c9-42b5-ae60-dcadad550215');
+          const element = document.querySelector('#df-344b4906-e4ef-46c1-9531-be758972f4da');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1148,7 +1162,7 @@ if res == &#39;&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a3b36880-3ff7-40ef-9948-ea9c9e628816">
+  <div id="df-415a074e-7e35-4d74-b6dc-120a20bbeeb9">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1244,7 +1258,7 @@ if res == &#39;&#39;:
 </table>
 <p>81 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a3b36880-3ff7-40ef-9948-ea9c9e628816')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-415a074e-7e35-4d74-b6dc-120a20bbeeb9')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1295,12 +1309,12 @@ if res == &#39;&#39;:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a3b36880-3ff7-40ef-9948-ea9c9e628816 button.colab-df-convert');
+          document.querySelector('#df-415a074e-7e35-4d74-b6dc-120a20bbeeb9 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a3b36880-3ff7-40ef-9948-ea9c9e628816');
+          const element = document.querySelector('#df-415a074e-7e35-4d74-b6dc-120a20bbeeb9');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1397,7 +1411,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-f87747cc-9f09-4072-a850-4c0c782fe2df">
+  <div id="df-a4d7810f-eecf-4af1-a20e-c71ef85c2af2">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1709,7 +1723,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </table>
 <p>81 rows × 606 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-f87747cc-9f09-4072-a850-4c0c782fe2df')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a4d7810f-eecf-4af1-a20e-c71ef85c2af2')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1760,12 +1774,12 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
       <script>
         const buttonEl =
-          document.querySelector('#df-f87747cc-9f09-4072-a850-4c0c782fe2df button.colab-df-convert');
+          document.querySelector('#df-a4d7810f-eecf-4af1-a20e-c71ef85c2af2 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-f87747cc-9f09-4072-a850-4c0c782fe2df');
+          const element = document.querySelector('#df-a4d7810f-eecf-4af1-a20e-c71ef85c2af2');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1879,7 +1893,7 @@ Name: Label, dtype: object
 </div>
 </section>
 <section id="bagging-classifier">
-<h2><strong>Bagging CLassifier</strong><a class="headerlink" href="#bagging-classifier" title="Permalink to this headline">#</a></h2>
+<h2><strong>Bagging Classifier</strong><a class="headerlink" href="#bagging-classifier" title="Permalink to this headline">#</a></h2>
 <p>Pengklasifikasi Bagging adalah meta-estimator ensemble yang cocok dengan pengklasifikasi dasar masing-masing pada subset acak dari dataset asli dan kemudian menggabungkan prediksi individu mereka (baik dengan pemungutan suara atau rata-rata) untuk membentuk prediksi akhir. Meta-estimator seperti itu biasanya dapat digunakan sebagai cara untuk mengurangi varians dari estimator kotak hitam (misalnya, pohon keputusan), dengan memasukkan pengacakan ke dalam prosedur konstruksinya dan kemudian membuat ansambel darinya.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1907,7 +1921,7 @@ Name: Label, dtype: object
 <span class="c1"># results = model_selection.cross_val_score(clf, X, y, cv = kfold)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;accuracy :&quot;</span><span class="p">)</span>
 <span class="c1"># print(results.mean())</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1934,7 +1948,7 @@ Name: Label, dtype: object
 <span class="c1"># RandomForestClassifier(...)</span>
 <span class="c1"># print(clf.predict([[0, 0, 0, 0]]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;accuracy :&quot;</span><span class="p">)</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1943,6 +1957,68 @@ Name: Label, dtype: object
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.948
+</pre></div>
+</div>
+</div>
+</div>
+<p>Naive Bayes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.88
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stacking-classifier">
+<h2><strong>Stacking Classifier</strong><a class="headerlink" href="#stacking-classifier" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.72
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">StackingClassifier</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="n">estimators</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)),(</span><span class="s1">&#39;rf1&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)),(</span><span class="s1">&#39;rf2&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)),(</span><span class="s1">&#39;rf3&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">))]</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span><span class="n">estimators</span><span class="o">=</span><span class="n">estimators</span><span class="p">,</span> <span class="n">final_estimator</span><span class="o">=</span><span class="n">GaussianNB</span><span class="p">())</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;accuracy :&quot;</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy :
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.84
 </pre></div>
 </div>
 </div>

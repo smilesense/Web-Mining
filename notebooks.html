@@ -553,12 +553,17 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bagging-classifier">
-     Bagging CLassifier
+     Bagging Classifier
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#random-forest">
      Random Forest
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stacking-classifier">
+     Stacking Classifier
     </a>
    </li>
   </ul>
@@ -1028,12 +1033,17 @@ title="Print to PDF"
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bagging-classifier">
-     Bagging CLassifier
+     Bagging Classifier
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#random-forest">
      Random Forest
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stacking-classifier">
+     Stacking Classifier
     </a>
    </li>
   </ul>
@@ -1405,30 +1415,30 @@ Berikut adalah penjelasan singkat mengenai script tersebut.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date             User  \
-0  2022-11-08 16:43:39+00:00        tj77iksan   
-1  2022-11-08 16:43:09+00:00   Bipangbipangan   
-2  2022-11-08 16:42:39+00:00       Cinere_007   
-3  2022-11-08 16:42:31+00:00        MatJohar3   
-4  2022-11-08 16:42:09+00:00       udhinjogja   
+0  2022-11-13 06:24:52+00:00  AnindyantiTiara   
+1  2022-11-13 06:24:42+00:00            odydc   
+2  2022-11-13 06:24:37+00:00    indozonemedia   
+3  2022-11-13 06:24:35+00:00  alfiarnimakhtaf   
+4  2022-11-13 06:24:33+00:00         vdandre3   
 ..                       ...              ...   
-95 2022-11-08 16:29:48+00:00  AchmadSuryandan   
-96 2022-11-08 16:29:15+00:00       bbyEmily01   
-97 2022-11-08 16:29:09+00:00         PikoloXY   
-98 2022-11-08 16:28:45+00:00      MIntegritas   
-99 2022-11-08 16:28:29+00:00         PikoloXY   
+95 2022-11-13 06:14:07+00:00        Phonodude   
+96 2022-11-13 06:14:05+00:00  PangalenggeEduc   
+97 2022-11-13 06:14:04+00:00          chep_ec   
+98 2022-11-13 06:14:02+00:00        Bisniscom   
+99 2022-11-13 06:14:00+00:00         zeniro23   
 
                                                 Tweet Label  
-0   Walau terlunta lunta , rintangan dan hujatan \...  None  
-1   @jokowi Jok jangan belagu jok, InsyaAllah jooo...  None  
-2   Rektor UGM klarifikasi ijasah Pak Jokowi\nhttp...  None  
-3   @MARQUEZ__93 @PDI_Perjuangan @Gerindra @jokowi...  None  
-4   @keuangannews_id Era gusdur saja sbg bpk demok...  None  
+0   Tokoh muda Papua, Septinus George Saa, menyamp...  None  
+1   Putin sama Zelensky ga dateng ke Bali, pasti k...  None  
+2   Menteri Koordinator Bidang Kemaritiman dan Inv...  None  
+3   @globaltimesnews Pak ini lho, ko bisa? 😅\n@Kem...  None  
+4   @Kaladium10 @D__Sappo @kurawa Jokowi dan Ahok ...  None  
 ..                                                ...   ...  
-95  @M45Broo Kan kata pak jokowi jatahnya prabowo,...  None  
-96  Presiden @jokowi juga mengucapkan selamat kepa...  None  
-97  &quot;Sudah, itu yang sudah pasti 17,&quot; ungkap Presi...  None  
-98  Presiden Joko Widodo atau Jokowi dalam beberap...  None  
-99  Dalam kesempatan tsb, Presiden Jokowi juga men...  None  
+95  @YRadianto Yang pasti jaman nya dia ekonomi be...  None  
+96  salam sehat selalu pak @jokowi 🙏 https://t.co/...  None  
+97  @keuangannews_id Banyak yang GILA karena pak j...  None  
+98  Hari Ini, Jokowi Terima Keketuaan Asean 2023 d...  None  
+99  ⁦@jokowi⁩ ⁦@mohmahfudmd⁩ ⁦@ListyoSigitP⁩ https...  None  
 
 [100 rows x 4 columns]
 </pre></div>
@@ -1471,7 +1481,7 @@ if res == &#39;&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c0954a7c-311c-4018-b821-bd0693e36a58">
+  <div id="df-d7bfe409-7a1a-4428-9ea8-6707a6c1d834">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1567,7 +1577,7 @@ if res == &#39;&#39;:
 </table>
 <p>81 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-c0954a7c-311c-4018-b821-bd0693e36a58')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d7bfe409-7a1a-4428-9ea8-6707a6c1d834')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1618,12 +1628,12 @@ if res == &#39;&#39;:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-c0954a7c-311c-4018-b821-bd0693e36a58 button.colab-df-convert');
+          document.querySelector('#df-d7bfe409-7a1a-4428-9ea8-6707a6c1d834 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-c0954a7c-311c-4018-b821-bd0693e36a58');
+          const element = document.querySelector('#df-d7bfe409-7a1a-4428-9ea8-6707a6c1d834');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -3795,7 +3805,7 @@ Name: Label, dtype: object
 </div>
 </section>
 <section id="bagging-classifier">
-<h2>Bagging CLassifier<a class="headerlink" href="#bagging-classifier" title="Permalink to this headline">#</a></h2>
+<h2>Bagging Classifier<a class="headerlink" href="#bagging-classifier" title="Permalink to this headline">#</a></h2>
 <p>Pengklasifikasi Bagging adalah meta-estimator ensemble yang cocok dengan pengklasifikasi dasar masing-masing pada subset acak dari dataset asli dan kemudian menggabungkan prediksi individu mereka (baik dengan pemungutan suara atau rata-rata) untuk membentuk prediksi akhir. Meta-estimator seperti itu biasanya dapat digunakan sebagai cara untuk mengurangi varians dari estimator kotak hitam (misalnya, pohon keputusan), dengan memasukkan pengacakan ke dalam prosedur konstruksinya dan kemudian membuat ansambel darinya.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3859,6 +3869,35 @@ Name: Label, dtype: object
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.948
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stacking-classifier">
+<h2>Stacking Classifier<a class="headerlink" href="#stacking-classifier" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">StackingClassifier</span>
+
+<span class="n">estimators</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)),(</span><span class="s1">&#39;svr&#39;</span><span class="p">,</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">StandardScaler</span><span class="p">(),</span>                      <span class="n">LinearSVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)))]</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span><span class="n">estimators</span><span class="o">=</span><span class="n">estimators</span><span class="p">,</span> <span class="n">final_estimator</span><span class="o">=</span><span class="n">LogisticRegression</span><span class="p">())</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;accuracy :&quot;</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy :
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.72
 </pre></div>
 </div>
 </div>
@@ -5294,7 +5333,7 @@ Berikut adalah penjelasan singkat mengenai script tersebut.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/notebooks_92_0.png" src="_images/notebooks_92_0.png" />
+<img alt="_images/notebooks_94_0.png" src="_images/notebooks_94_0.png" />
 </div>
 </div>
 </section>
