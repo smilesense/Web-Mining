@@ -154,6 +154,13 @@ const thebe_selector_output = ".output, .cell_output"
    </strong>
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="uasppw.html">
+   <strong>
+    Tugas UAS
+   </strong>
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -1252,8 +1259,8 @@ NIM : 190411100121</p>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="tugas-mining-data-twitter-untuk-menganalisis-sentimen-atau-opini-suatu-topik-klasifikasi-menggunakan-knn">
 <h1><strong>Tugas Mining Data Twitter Untuk Menganalisis Sentimen atau Opini Suatu Topik (klasifikasi menggunakan KNN)</strong><a class="headerlink" href="#tugas-mining-data-twitter-untuk-menganalisis-sentimen-atau-opini-suatu-topik-klasifikasi-menggunakan-knn" title="Permalink to this headline">#</a></h1>
-<p>Twitter
-Twitter adalah situs berita dan jejaring sosial online tempat orang berkomunikasi dalam pesan singkat yang disebut tweet. Tweeting adalah memposting pesan singkat untuk siapa saja yang mengikuti kita di Twitter, dengan harapan kata-kata kita dapat bermanfaat dan menarik bagi orang lain.</p>
+<p>Twitter</p>
+<p>Twitter adalah situs berita dan jejaring sosial online tempat orang berkomunikasi dalam pesan singkat yang disebut tweet. Tweeting adalah memposting pesan singkat untuk siapa saja yang mengikuti kita di Twitter, dengan harapan kata-kata kita dapat bermanfaat dan menarik bagi orang lain.</p>
 <hr class="docutils" />
 <section id="instalasi-library">
 <h2>Instalasi Library<a class="headerlink" href="#instalasi-library" title="Permalink to this headline">#</a></h2>
@@ -1342,31 +1349,35 @@ Berikut adalah penjelasan singkat mengenai script tersebut.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-2-b56a5acda1a6&gt;:16: FutureWarning: username is deprecated, use user.username instead
+  tweets.append([tweet.date, tweet.username, tweet.content, &#39;None&#39;])
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Date             User  \
-0  2022-11-23 00:05:37+00:00  mustofa_blitary   
-1  2022-11-23 00:05:37+00:00    rodhi_firdaus   
-2  2022-11-23 00:05:35+00:00        NoviRoose   
-3  2022-11-23 00:05:35+00:00  APendampingdesa   
-4  2022-11-23 00:05:34+00:00          Sri1904   
+0  2022-12-14 01:25:24+00:00  Sandi_suardi203   
+1  2022-12-14 01:25:24+00:00    Mudatsirj1005   
+2  2022-12-14 01:25:19+00:00          agss271   
+3  2022-12-14 01:25:16+00:00          Amuzaa2   
+4  2022-12-14 01:25:00+00:00     MembangunIND   
 ..                       ...              ...   
-95 2022-11-23 00:04:02+00:00        air_isfar   
-96 2022-11-23 00:04:02+00:00  malikiblitar199   
-97 2022-11-23 00:04:00+00:00      wongbojong1   
-98 2022-11-23 00:03:56+00:00        AnsoriAim   
-99 2022-11-23 00:03:54+00:00          yunuzae   
+95 2022-12-14 01:14:50+00:00       SahatNasib   
+96 2022-12-14 01:14:48+00:00         Suhadhi2   
+97 2022-12-14 01:14:42+00:00      dizan_rizki   
+98 2022-12-14 01:14:39+00:00      HARIRI72_OK   
+99 2022-12-14 01:14:28+00:00       Jhonry_pea   
 
                                                 Tweet Label  
-0   #SampangTrunojoyo\n#TPPJatim\n#TPPBlitarAsyik\...  None  
-1   selamat pagi, semangat pagi 8\n#SampangTrunojo...  None  
-2   Presiden Jokowi menggunakan jalur darat ke Cia...  None  
-3   #SampangTrunojoyo\n#TPPJatim\n#TPPBlitarAsyik\...  None  
-4   #SampangTrunojoyo\n#AlunAlunSampang\n#MonumenT...  None  
+0   @Muhammad_Saewad Kalu bisa seumur hidup .. pak...  None  
+1   @SonyTriYantoH1 @ruhutsitompul Langsung ciuuut...  None  
+2   @DaengWahidin2 Jokowi patut mundur karena jadi...  None  
+3   Kok jadi ingat video2 ISIS waktu itu ya..😥\n\n...  None  
+4   Pemerintah bergerak cepat dalam menyelesaikan ...  None  
 ..                                                ...   ...  
-95  Wisata Alam Panjat Tebing-Sokobanah\n#SampangT...  None  
-96  #SampangTrunojoyo\n#TPPJatim\n#TPPBlitarAsyik\...  None  
-97  @alisyarief @jokowi kemasukan paham radikal, c...  None  
-98  @Wiwik_Sabbatuss @jokowi @halimiskandarnu Jamu...  None  
-99  Sang Raden dari Tanah Garam\n#SampangTrunojoyo...  None  
+95     @jokowi Sehat selalu Bapak Presiden ku dan Ibu  None  
+96  @kentshoes @kotaserui @Puspen_TNI @DivHumas_Po...  None  
+97  @jokowi Podo Bae Iki pak Jokowi \nRakyat e nje...  None  
+98  PetaniHidupku\n#JayalahPetaniInsonesia\nTPPJat...  None  
+99  @an_ti_ka_drun @M45Broo TOLAK CAPRES ANTITESA ...  None  
 
 [100 rows x 4 columns]
 </pre></div>
@@ -1409,7 +1420,7 @@ if res == &#39;&#39;:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-86ac43dd-888d-4cb9-a6bb-9e87445cdda5">
+  <div id="df-a933efcc-3500-47af-82e9-a7c0a55bbb9c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1505,7 +1516,7 @@ if res == &#39;&#39;:
 </table>
 <p>81 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-86ac43dd-888d-4cb9-a6bb-9e87445cdda5')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a933efcc-3500-47af-82e9-a7c0a55bbb9c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1556,12 +1567,12 @@ if res == &#39;&#39;:
 
       <script>
         const buttonEl =
-          document.querySelector('#df-86ac43dd-888d-4cb9-a6bb-9e87445cdda5 button.colab-df-convert');
+          document.querySelector('#df-a933efcc-3500-47af-82e9-a7c0a55bbb9c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-86ac43dd-888d-4cb9-a6bb-9e87445cdda5');
+          const element = document.querySelector('#df-a933efcc-3500-47af-82e9-a7c0a55bbb9c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
